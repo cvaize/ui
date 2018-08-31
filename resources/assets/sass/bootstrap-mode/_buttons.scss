@@ -1,0 +1,280 @@
+
+
+.btn{
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+
+}
+
+
+.btn-primary{
+  background-color: $color2;
+  border-color: $color2;
+  color: white;
+  &:hover{
+    background-color: #9acaf9;
+    border-color: #9acaf9;
+  }
+}
+.btn-outline-primary{
+  background-color: white;
+  border-color: $color2;
+  color: $color2;
+  &:hover{
+    background-color: #e6f2ff;
+    border-color: transparent;
+    color: lighten($color2, 1%);
+  }
+}
+.btn-lg, .btn-group-lg > .btn{
+  font-size: 1rem;
+  border-radius: 0.2rem;
+}
+.btn-text-small{
+  font-size: .7rem;
+  padding: .76rem 1rem;
+}
+.btn-rounded{
+  border-radius: 3rem;
+}
+.btn-add{
+  position: relative;
+  width: 2rem;
+  line-height: 0;
+  font-size: 0;
+  height: 2rem;
+  padding: 0;
+  &:after, &:before{
+    position: absolute;
+    content: "";
+    width: .9rem;
+    height: 1px;
+    top: .95rem;
+    left: .5rem;
+    background: #2cb52d;
+    transition: all .2s ease-in;
+  }
+  &:before{
+    //transform: rotate(90deg);
+  }
+  &:after{
+    transform: rotate(90deg);
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-outline-success.btn-add{
+  &:after, &:before{
+    background: #2cb52d;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-success.btn-add{
+  &:after, &:before{
+    background: #fff;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-active{
+  position: relative;
+  width: 2rem;
+  line-height: 0;
+  font-size: 0;
+  height: 2rem;
+  padding: 0;
+  &:after, &:before{
+    position: absolute;
+    content: "";
+    width: .9rem;
+    height: 1px;
+    background: #2cb52d;
+    transition: all .2s ease-in;
+  }
+  &:before{
+    top: 1rem;
+    left: 0.4rem;
+    width: .5rem;
+    transform: rotate(45deg);
+  }
+  &:after{
+    top: .9rem;
+    left: .7rem;
+    transform: rotate(-45deg);
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-outline-success.btn-active{
+  &:after, &:before{
+    background: #2cb52d;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-success.btn-active{
+  &:after, &:before{
+    background: #fff;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-outline-danger.btn-active{
+  &:after, &:before{
+    background: #db3742;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-danger.btn-active{
+  &:after, &:before{
+    background: #fff;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-close{
+  position: relative;
+  width: 2rem;
+  line-height: 0;
+  font-size: 0;
+  height: 2rem;
+  padding: 0;
+  &--sm{
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  &:after, &:before{
+    position: absolute;
+    content: "";
+    width: .9rem;
+    height: 1px;
+    top: .95rem;
+    left: .5rem;
+    background: #2cb52d;
+    transition: all .2s ease-in;
+  }
+  &--sm{
+    &:after, &:before{
+      width: .7rem;
+      height: 1px;
+      top: .697rem;
+      left: .41rem;
+    }
+  }
+  &:before{
+    transform: rotate(45deg);
+  }
+  &:after{
+    transform: rotate(-45deg);
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-outline-success.btn-close{
+  &:after, &:before{
+    background: #2cb52d;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-success.btn-close{
+  &:after, &:before{
+    background: #fff;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-outline-danger.btn-close{
+  &:after, &:before{
+    background: #db3742;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}
+.btn-danger.btn-close{
+  &:after, &:before{
+    background: #fff;
+  }
+  &:hover{
+    &:after, &:before{
+      background: #fff;
+    }
+  }
+}

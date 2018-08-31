@@ -1,0 +1,102 @@
+.dropdown{
+  .dropdown-toggle{
+    cursor: pointer;
+    color: $yellow;
+    background-color: transparent;
+    background-image: none;
+    border: 2px solid rgba($color5, 0.1);
+    padding: 0.64px 0 0 2.4px;
+    line-height: 0;
+    width: 17.6px;
+    height: 17.6px;
+    vertical-align: 0!important;
+    border-radius: 50%;
+    &:focus{
+      outline: 0;
+      box-shadow: 0 0 0 0.1rem rgba($color5, 0.05);
+    }
+    &::after{
+      display: block;
+      vertical-align: 0;
+      content: "";
+      border-top: 4.4px solid;
+      border-right: 4.4px solid transparent;
+      border-bottom: 0;
+      border-left: 4.4px solid transparent;
+      margin-left: 0!important;
+      transform: rotate(0deg);
+      transition: all .3s ease-in;
+    }
+    &[aria-expanded="true"]::after{
+      transform: rotate(180deg);
+    }
+  }
+  .dropdown-menu{
+    &[x-placement="bottom-start"]{
+      top: 5px!important;
+    }
+    &[x-placement="top-start"]{
+      top: -5px!important;
+      &~.dropdown-toggle{
+        .caret:before {
+          top: -13px;
+          right: -7px;
+          border-bottom-color: #fff;
+          transform: rotate(180deg);
+        }
+        .caret:after {
+          top: -14px;
+          right: -7px;
+          border-bottom-color: #fff;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    box-shadow:  0px 0px 20px 0px rgba($color1,0.2);
+    border-color: transparent;
+    .dropdown-item{
+      color: $color1;
+      i{
+        color: $gray-600;
+      }
+      &:hover{
+        color: $color2;
+        background-color: #f8f9fd;
+        i{
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
+
+/* caret style */
+.caret {
+  position: relative;
+}
+
+/* dropdown style */
+.dropdown.show .caret:before,
+.dropdown.show .caret:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border-width: 7px 8px;
+  border-style: solid;
+  border-color: transparent;
+  z-index: 1001;
+}
+.dropdown.show .caret:before {
+  bottom: -19px;
+  right: -7px;
+  border-bottom-color: #fff;
+}
+.dropdown.show .caret:after {
+  bottom: -20px;
+  right: -7px;
+  border-bottom-color: #fff;
+}
+
