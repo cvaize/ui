@@ -1,280 +1,111 @@
-
-
 .btn{
+  padding-top: 0;
+  padding-bottom: 0;
   display: inline-block;
-  font-weight: $btn-font-weight;
-  text-align: center;
-  white-space: nowrap;
   vertical-align: middle;
-  user-select: none;
-  border: $btn-border-width solid transparent;
-  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
-  @include transition($btn-transition);
-
-  // Share hover and focus styles
-  @include hover-focus {
-    text-decoration: none;
+  line-height: 3;
+  *{
+    line-height: $line-height-base;
+    vertical-align: middle;
   }
-
-  &:focus,
-  &.focus {
-    outline: 0;
-    box-shadow: $btn-focus-box-shadow;
-  }
-
-  // Disabled comes first so active can properly restyle
-  &.disabled,
-  &:disabled {
-    opacity: $btn-disabled-opacity;
-    @include box-shadow(none);
-  }
-
-  // Opinionated: add "hand" cursor to non-disabled .btn elements
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
-  }
-
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active {
-    @include box-shadow($btn-active-box-shadow);
-
-    &:focus {
-      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
-    }
-  }
-
-}
-
-
-.btn-primary{
-  background-color: $color2;
-  border-color: $color2;
-  color: white;
-  &:hover{
-    background-color: #9acaf9;
-    border-color: #9acaf9;
+  i{
+    line-height: 1;
   }
 }
-.btn-outline-primary{
-  background-color: white;
-  border-color: $color2;
-  color: $color2;
-  &:hover{
-    background-color: #e6f2ff;
-    border-color: transparent;
-    color: lighten($color2, 1%);
+.btn-primary {
+  color: $white;
+  @include gradient-bg($primary);
+  border-color: $primary;
+  @include hover {
+    color: $white;
+    @include gradient-bg($btn-primary--hover-background);
+    border-color: $btn-primary--hover-background;
   }
 }
-.btn-lg, .btn-group-lg > .btn{
-  font-size: 1rem;
-  border-radius: 0.2rem;
-}
-.btn-text-small{
-  font-size: .7rem;
-  padding: .76rem 1rem;
-}
-.btn-rounded{
-  border-radius: 3rem;
-}
-.btn-add{
-  position: relative;
-  width: 2rem;
-  line-height: 0;
-  font-size: 0;
-  height: 2rem;
-  padding: 0;
-  &:after, &:before{
-    position: absolute;
-    content: "";
-    width: .9rem;
-    height: 1px;
-    top: .95rem;
-    left: .5rem;
-    background: #2cb52d;
-    transition: all .2s ease-in;
+.btn-outline-primary {
+  color: $primary;
+  @include gradient-bg($white);
+  border-color: $primary;
+  @include hover {
+    color: $primary;
+    @include gradient-bg($btn-outline-primary--hover-background);
+    border-color: $btn-outline-primary--hover-background;
   }
-  &:before{
-    //transform: rotate(90deg);
+}
+.btn-secondary {
+  color: $color9;
+  @include gradient-bg($color10);
+  border-color: $color10;
+  @include hover {
+    color: $primary;
+    @include gradient-bg($color4);
+    border-color: $color4;
   }
-  &:after{
-    transform: rotate(90deg);
+}
+.btn-outline-secondary {
+  @include hover {
+    color: $white;
   }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
+}
+.btn--rounded{
+  border-radius: $btn--rounded-border-radius;
+}
+.btn--with-i{
+  padding: 0 1.4rem;
+  i{
+    color: $btn--with-i-color;
+  }
+}
+.btn{
+  &.small{
+    font-size: 90%;
+    padding-top: .14rem;
+    padding-bottom: .14rem;
+    &.btn-lg{
+      padding-top: .5rem;
+      padding-bottom: .5rem;
     }
   }
 }
-.btn-outline-success.btn-add{
-  &:after, &:before{
-    background: #2cb52d;
+.btn-circle {
+  width: 2.8rem;
+  border-radius: 50%;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  white-space: normal; /* восстанавливаем свойству значение по умолчанию */
+  i{
+    font-size: 1.2rem;
+    line-height: 1;
+    position: relative;
+    bottom: 1px;
   }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
+  &.small{
+    width: 1.72rem;
+    padding: 0;
+    border-radius: 50%;
+    text-align: center;
+    white-space: normal;
+    line-height: 2;
+    i{
+      font-size: 1rem;
+      line-height: 1;
+      position: relative;
+      bottom: 1px;
     }
   }
-}
-.btn-success.btn-add{
-  &:after, &:before{
-    background: #fff;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-active{
-  position: relative;
-  width: 2rem;
-  line-height: 0;
-  font-size: 0;
-  height: 2rem;
-  padding: 0;
-  &:after, &:before{
-    position: absolute;
-    content: "";
-    width: .9rem;
-    height: 1px;
-    background: #2cb52d;
-    transition: all .2s ease-in;
-  }
-  &:before{
-    top: 1rem;
-    left: 0.4rem;
-    width: .5rem;
-    transform: rotate(45deg);
-  }
-  &:after{
-    top: .9rem;
-    left: .7rem;
-    transform: rotate(-45deg);
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-outline-success.btn-active{
-  &:after, &:before{
-    background: #2cb52d;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-success.btn-active{
-  &:after, &:before{
-    background: #fff;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-outline-danger.btn-active{
-  &:after, &:before{
-    background: #db3742;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-danger.btn-active{
-  &:after, &:before{
-    background: #fff;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-close{
-  position: relative;
-  width: 2rem;
-  line-height: 0;
-  font-size: 0;
-  height: 2rem;
-  padding: 0;
-  &--sm{
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-  &:after, &:before{
-    position: absolute;
-    content: "";
-    width: .9rem;
-    height: 1px;
-    top: .95rem;
-    left: .5rem;
-    background: #2cb52d;
-    transition: all .2s ease-in;
-  }
-  &--sm{
-    &:after, &:before{
-      width: .7rem;
-      height: 1px;
-      top: .697rem;
-      left: .41rem;
-    }
-  }
-  &:before{
-    transform: rotate(45deg);
-  }
-  &:after{
-    transform: rotate(-45deg);
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-outline-success.btn-close{
-  &:after, &:before{
-    background: #2cb52d;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-success.btn-close{
-  &:after, &:before{
-    background: #fff;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-outline-danger.btn-close{
-  &:after, &:before{
-    background: #db3742;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
-    }
-  }
-}
-.btn-danger.btn-close{
-  &:after, &:before{
-    background: #fff;
-  }
-  &:hover{
-    &:after, &:before{
-      background: #fff;
+  &.middle{
+    width: 2.36rem;
+    padding: 0;
+    border-radius: 50%;
+    text-align: center;
+    white-space: normal;
+    line-height: 2.5;
+    i{
+      font-size: 1.1rem;
+      line-height: 1;
+      position: relative;
+      bottom: 1px;
     }
   }
 }
