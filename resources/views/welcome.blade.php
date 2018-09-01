@@ -235,11 +235,115 @@
 
                 <button class="btn btn-secondary btn-circle mb-3 middle">
                     <i class="fab fa-linkedin-in"></i>
+
                 </button>
             </div>
         </div>
     </div>
 
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Формы</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <img src="/img/6.png" alt="">
+                <img src="/img/7.png" alt="">
+                <img src="/img/8.png" alt="">
+            </div>
+            <div class="col-4 mt-3">
+                @include("forms._input", [
+                    "type"=>"text",
+                    "name"=>"address",
+                    "value"=>"gsfuo7232370462462083hef723",
+                    "label"=>"Wallet address:"
+                ])
+                @include("forms._input", [
+                    "type"=>"password",
+                    "name"=>"password",
+                    "value"=>"gsfuo7232370462462083hef723",
+                    "label"=>"Password",
+                    "eye"=>true
+                ])
+                @include("forms._input", [
+                    "type"=>"text",
+                    "name"=>"text",
+                    "value"=>"gsfuo7232370462462083hef723",
+                    "label"=>"Text",
+                    "textPrepand"=>"USD",
+                    "textAppend"=>"USD",
+                ])
+                @include("forms._input", [
+                    "type"=>"number",
+                    "name"=>"text",
+                    "classFormGroup"=>"form-group--outline",
+                    "value"=>"123123",
+                    "label"=>"Text",
+                    "textPrepand"=>"USD",
+                    "textAppend"=>"USD",
+                ])
+                @include("forms._select", [
+                    "name"=>"select",
+                    "class"=>"selectric--simple",
+                    "label"=>"Select",
+                    "list"=>[
+                        1=>"Role 1",
+                        2=>"Role 2",
+                        3=>"Role 3",
+                        4=>"Role 4",
+                        5=>"Role 5",
+                    ]
+                ])
+                @include("forms._select", [
+                    "name"=>"select",
+                    "class"=>"",
+                    "label"=>"Select",
+                    "list"=>[
+                        1=>"Role 1",
+                        2=>"Role 2",
+                        3=>"Role 3",
+                        4=>"Role 4",
+                        5=>"Role 5",
+                    ],
+                    "icon"=>'<i class="fas fa-user-clock"></i>',
+
+                ])
+                <div class="bg-light p-5">
+                    @include("forms._select", [
+                        "name"=>"select",
+                        "formClass"=>"selectric--no-border",
+                        "list"=>[
+                            1=>"Role 1",
+                            2=>"Role 2",
+                            3=>"Role 3",
+                            4=>"Role 4",
+                            5=>"Role 5",
+                        ],
+                        "icon"=>'<i class="fas fa-user-clock selectric__icon"></i>'
+                        /**
+                        Если иконка не задана тегом i
+                        то присвойте родительскому тегу класс "selectric__icon"
+                        **/
+                    ])
+                </div>
+
+                <div class="py-5 bg-light my-5">
+                    @include("modules.account-select.account-select", [
+
+                    ])
+                </div>
+            </div>
+        </div>
+    </div>
     <div style="height: 50rem"></div>
 
     <script src="{{mix("/js/app.js")}}"></script>

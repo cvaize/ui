@@ -5,8 +5,11 @@
 //FontAwesome
 //@import '../libs/fontawesome/css/all.css';
 
+@import '~selectric/src/selectric';
+
 // Variables
 @import 'bootstrap-mode/variables';
+
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -16,4 +19,15 @@
 @import 'bootstrap-mode/buttons';
 @import 'bootstrap-mode/tags';
 @import 'bootstrap-mode/checkboxes';
+@import 'bootstrap-mode/inputs';
 
+
+
+//Selectric
+@import './selectric-mode/selectric';
+
+//Screens
+@import 'screens/login';
+
+//modules
+@import './modules/account-select/app.scss';

@@ -10,6 +10,9 @@ $color7: #d8ffe3;
 $color8: #f9b654;
 $color9: #97a4b0;
 $color10: #ebeef2;
+$color11: #f8f9fd;
+$color12: #b9caef;
+$color13: #72b3ff;
 
 $blue: $color2;
 
@@ -34,3 +37,8 @@ $btn-primary--hover-background: #99c8ff;
 $btn-outline-primary--hover-background: #e6f2ff;
 $btn--rounded-border-radius: 2rem;
 $btn--with-i-color: #d7e9ff;
+
+//Inputs
+$input-btn-focus-box-shadow: none;
+$input-focus-border-color: $color2;
+$input-focus-color: $color1;

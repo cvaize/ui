@@ -1,0 +1,45 @@
+.selectric{
+  background: $white;
+  //border: none;
+  .button {
+    background: $white;
+    color: $color13;
+    width: 3.58rem;
+    height: 3.58rem;
+    line-height: 3.58rem;
+    &:after{
+      border-top-color: $color13;
+    }
+  }
+  .label{
+    font-size: 1rem;
+    color: $color1;
+    padding-left: .9rem;
+    height: 3.58rem;
+    line-height: 3.58rem;
+    i, .selectric__icon{
+      margin-right: .65rem;
+      color: $color13;
+    }
+  }
+  &--no-border{
+    .selectric, .selectric-items{
+      border: none;
+      box-shadow: 0 .5rem 1rem 0 rgba($color1,0.1);
+    }
+  }
+}
+.selectric-items{
+  li{
+    color: $color1;
+    background: $white;
+  }
+  li:hover{
+    background: $color11;
+    color: $color2;
+  }
+  li.highlighted{
+    background: darken($color11, 2%);
+    color: $color2;
+  }
+}

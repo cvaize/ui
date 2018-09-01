@@ -1,0 +1,88 @@
+.form-control-label {
+  font-size: 1.2rem;
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 1.6rem 1.6rem;
+  background: $color11;
+  color: $color5;
+  font-weight: 300;
+  &:focus~.input-group-append .input-group-text{
+    background-color: $white;
+    border-color: $color2;
+    color: $color12;
+  }
+  &.is-invalid:focus{
+    box-shadow: none;
+  }
+}
+.input-group-text.is-invalid{
+  border-color: $form-feedback-invalid-color;
+}
+.input-group{
+  .input-group-text{
+    font-size: 1rem;
+    padding: 0.2rem 1.4rem;
+    color: $color9;
+    font-weight: 300;
+    transition: all .2s ease-in;
+  }
+}
+.input-group.active{
+  .input-group-text{
+    background-color: $white;
+    border-color: $color2;
+    color: $color12;
+    transition: all .2s ease-in;
+    &.is-invalid{
+      border-color: $form-feedback-invalid-color;
+    }
+  }
+}
+.form-group--outline{
+  .form-control{
+    background-color: $white;
+    border-color: $color10;
+    color: $color9;
+  }
+  .input-group{
+    .input-group-text{
+      background-color: $white;
+      border-color: $color10;
+      color: $color9;
+      &.is-invalid{
+        border-color: $form-feedback-invalid-color;
+      }
+    }
+    .form-control{
+      &.is-invalid{
+        border-color: $form-feedback-invalid-color;
+      }
+    }
+  }
+  .input-group.active{
+    .form-control{
+      background-color: $white;
+      border-color: $color2;
+      color: $color1;
+      &.is-invalid{
+        border-color: $form-feedback-invalid-color;
+      }
+    }
+    .input-group-text{
+      background-color: $white;
+      border-color: $color2;
+      color: $color12;
+      &.is-invalid{
+        border-color: $form-feedback-invalid-color;
+      }
+    }
+  }
+  .form-control.is-invalid{
+    border-color: $form-feedback-invalid-color;
+  }
+}
+.form-control-label~.form-text{
+  margin-top: -0.3rem;
+}
