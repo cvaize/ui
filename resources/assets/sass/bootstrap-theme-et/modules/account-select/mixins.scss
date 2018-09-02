@@ -1,0 +1,128 @@
+@mixin account-select($prefix){
+  .#{$prefix}account-select{
+    background: $white;
+    border: 1px solid $color5;
+    border-radius: .3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    &__wrapper{
+      position: relative;
+      z-index: 10000;
+    }
+    &__wrap-list{
+      position: absolute;
+      left: 0;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background: $white;
+      border: 1px solid $color5;
+      border-radius: .3rem;
+      display: none;
+      &.show{
+        display: block;
+      }
+    }
+    &__list{
+      position: relative;
+      max-height: (3.2rem * 5);
+      overflow-y: auto;
+    }
+    &__item, &__item--add{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid $color5;
+      &:last-child{
+        border-bottom: none;
+      }
+      &.selected{
+        background: $color4;
+      }
+    }
+    &__item--add{
+      border-top: 1px solid $color5;
+    }
+    &__name, &__subtext{
+      //overflow: auto;
+      //white-space: nowrap;
+      //pre{
+      //  font-size: inherit;
+      //  color: inherit;
+      //  display: block;
+      //  margin: 0!important;
+      //  padding: 0!important;
+      //  overflow: auto;
+      //}
+    }
+    &__name{
+      line-height: 1.2;
+    }
+    &__subtext{
+      line-height: 1.2;
+      color: $color9;
+    }
+    &__content{
+      min-height: 3rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 1rem;
+      width: calc(100% - 3rem);
+      flex-grow: 1;
+      cursor: pointer;
+    }
+    &__add{
+      height: 3rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 1rem;
+      width: 100%;
+    }
+    &__box{
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color5;
+      text-decoration: none;
+      &:hover{
+        color: $color5;
+        text-decoration: none;
+      }
+      &__icon{
+        color: $color5;
+        &:hover{
+          color: $color5;
+        }
+      }
+    }
+    &__wrapper-avatar{
+      position: relative;
+      width: 2rem;
+      height: 2rem;
+      min-width: 2rem;
+      margin-right: .6rem;
+    }
+    &__wrapper-text{
+      width: calc(100% - 2.6rem);
+      padding: .5rem 0;
+    }
+    &__avatar{
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 50%;
+    }
+  }
+}

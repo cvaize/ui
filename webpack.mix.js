@@ -12,9 +12,11 @@ let mix = require('laravel-mix');
  */
 
 mix
+    .js('resources/assets/js/all.js', 'public/js/all.js')
     // .copy('./resources/assets/libs/fontawesome/webfonts', 'public/webfonts')
-    .js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .js('resources/assets/js/bootstrap-theme-et/app.js', 'public/js/bootstrap-theme-et.js')
+    .sass('resources/assets/sass/all.scss', 'public/css/all.css')
+   .sass('resources/assets/sass/bootstrap-theme-et/app.scss', 'public/css/bootstrap-theme-et.css');
 
 mix.browserSync({
     proxy:  // проксирование вашего удаленного сервера, не важно на чем back-end

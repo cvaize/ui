@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('login', function () {
     return view('screens.login');
 });
+
+Route::get('1_sign-in-main', function () {
+    return view('screens.1_sign-in-main');
+});

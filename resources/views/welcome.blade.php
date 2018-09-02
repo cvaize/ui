@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css">
-        <link rel="stylesheet" href="{{mix("/css/app.css")}}">
-    </head>
-    <body>
+@section('content')
 
     <div class="container mb-5">
         <div class="row">
@@ -27,7 +16,6 @@
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aliquid animi aperiam aspernatur consequuntur debitis dolore, dolorem doloribus eos eum fuga fugiat id impedit ipsa modi natus nesciunt nobis pariatur perferendis placeat porro quasi quo, ratione reiciendis rem repellendus sequi sunt tenetur ullam veritatis voluptas voluptate voluptatum. Eius error eum, excepturi explicabo itaque, libero nemo nesciunt placeat quae quas rem vel vitae! Architecto beatae consectetur cum, dignissimos et id incidunt ipsa magni perferendis, quia quisquam ratione tempore temporibus vero voluptates. Aliquid consequatur delectus dolore dolores ea eius eligendi fugiat ipsa nihil nulla obcaecati pariatur quae quas quia tenetur, veniam.</p>
                 <div class="row">
                     <div class="col-6">
-                        <img src="/img/4.png" alt="">
                     </div>
                     <div class="col-6">
                         <a href="#">Sign in</a>
@@ -56,7 +44,6 @@
                 </div>
             </div>
             <div class="col-6">
-                <img src="/img/1.png" alt="">
             </div>
             <div class="col-6 bg-light ">
                 <div class="dropdown">
@@ -74,7 +61,6 @@
                 </div>
             </div>
             <div class="col-6">
-                <img src="/img/3.png" alt="">
 
             </div>
             <div class="col-6">
@@ -181,7 +167,6 @@
 
             </div>
             <div class="col-6">
-                <img src="/img/2.png" alt="">
 
             </div>
             <div class="col-6">
@@ -240,8 +225,6 @@
             </div>
         </div>
     </div>
-
-
     <br>
     <br>
     <br>
@@ -254,13 +237,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <img src="/img/6.png" alt="">
-                <img src="/img/7.png" alt="">
-                <img src="/img/8.png" alt="">
-            </div>
-            <div class="col-4 mt-3">
+        <div class="row justify-content-center">
+            <div class="col-7 mt-3">
                 @include("forms._input", [
                     "type"=>"text",
                     "name"=>"address",
@@ -273,6 +251,13 @@
                     "value"=>"gsfuo7232370462462083hef723",
                     "label"=>"Password",
                     "eye"=>true
+                ])
+                @include("forms._input", [
+                    "type"=>"password",
+                    "name"=>"password",
+                    "value"=>"gsfuo7232370462462083hef723",
+                    "label"=>"Password",
+                    "eye"=>false
                 ])
                 @include("forms._input", [
                     "type"=>"text",
@@ -335,17 +320,67 @@
                         **/
                     ])
                 </div>
-
-                <div class="py-5 bg-light my-5">
-                    @include("modules.account-select.account-select", [
-
-                    ])
+            </div>
+            <div class="col-6 ">
+                <div style="height: 10rem"></div>
+                <div class="py-5 my-5">
+                    <form action="/">
+                        @include("modules.account-select.account-select", [
+                            "name"=>"account_id",
+                            "default"=>"/img/default.jpg",
+                            "add"=>true,
+                            "textAdd"=>"Add account",
+                            "placeholder"=>"Select account",
+                            "value"=>2,
+                            "list"=>[
+                                1=>[
+                                    "name"=>"Иван Иванович Иванов",
+                                    "subtext"=>"ИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИванов",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                2=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"ke tcu4n873cgt 387tnc8073tmn370ytm7803c t0m8n3ycmn0tx93ke tcu4n873cgt 387tnc8073tmn370ytm7803c t0m8n3ycmn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                3=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                4=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                5=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                6=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                7=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                                8=>[
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
+                                    "avatar"=>"/img/tiger.jpg",
+                                ],
+                            ]
+                        ])
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <div style="height: 50rem"></div>
 
-    <script src="{{mix("/js/app.js")}}"></script>
-    </body>
-</html>
+@stop

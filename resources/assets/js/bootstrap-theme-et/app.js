@@ -1,12 +1,9 @@
 
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * EBS
  */
 
-require('./bootstrap');
-require('selectric');
+require('selectric'); // http://selectric.js.org/
 
 $(".js-form-control--checkbox-eye").on("change", function () {
     let input = $(this).attr("data-input");
@@ -33,3 +30,7 @@ $('.js-selectric').selectric({
         return ((icon && icon.length > 4)? icon : '') + currItem.text;
     }
 });
+
+
+//Modules
+require('./modules/account-select/account-select');
