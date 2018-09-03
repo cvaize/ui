@@ -1,32 +1,86 @@
-<img src="./img/screens/navbar.png" alt="">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="navbar__wrapper js-navbar-collapse">
+    <nav class="navbar navbar-expand-xl navbar-light">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <div class="navbar__content-wrapper">
+            <a class="navbar-brand pb-2" href="#">
+                <img src="./img/screens/navbar/ET-Logo--700.svg" alt="logo">
+            </a>
+
+            <div class="collapse navbar-collapse navbar__collapse--xl">
+                <ul class="navbar-nav mr-auto font-weight-bold w-100">
+                    <li class="nav-item">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <i class="fas fa-wallet mr-2"></i>
+                            <span class="ml-1 link__hover-element link__hover-element--underline font-weight-normal">ASSERTS BALANCE:</span>
+                            <br>
+                            <span class="ml-3 pl-3">35k$ (~ 6BTC)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <i class="fas fa-wallet mr-2"></i>
+                            <span class="ml-1 link__hover-element link__hover-element--underline font-weight-normal">ET-TOKEN BALANCE:</span>
+                            <br>
+                            <span class="ml-3 pl-3">250I EET (~6 k$)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <i class="fas fa-wallet mr-2"></i>
+                            <span class="ml-1">3500 EOS (16 645$)</span>
+                            <br>
+                            <i class="fas fa-wallet mr-2"></i>
+                            <span class="ml-1 link__hover-element link__hover-element--underline font-weight-normal">ACTIVE PURPOSES:</span>
+                            2
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item--thumbnail">
+                        <div class="nav-item--thumbnail__wrapper">
+                            <div class="dropdown dropdown--thumbnail">
+                                <a class="nav-link dropdown-toggle"
+                                   href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <img class="rounded-circle img-thumbnail" src="/img/tiger.jpg" alt="">
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>My Wallet</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-chart-line mr-2"></i>Active Trust</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-history mr-2"></i>History of
+                                        Trust <span
+                                                class="ml-auto"><span
+                                                    class="dropdown-item--counter ml-2">99</span></span></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Sing
+                                        Out</a>
+                                </div>
+                            </div>
+                            <div class="row h-100 flex-grow-1 flex-nowrap">
+                                <div class="pl-4 ml-1 col-auto d-flex flex-column justify-content-center lh--1_4">
+                                    <div class="text-truncate">Kirill Silvestrov</div>
+                                    <div class="small">Role: Client, Age 39</div>
+                                    <div class="small">Singapore</div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-end">
+                                    <a class="nav-link nav-link--bell" href="#">
+                                        <i class="fas fa-bell"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="hamburger navbar__hamburger js-navbar__hamburger hamburger--arrow" type="button"
+                    aria-label="Toggle navigation">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+            </button>
+        </div>
+
+    </nav>
+    <div class="navbar-offset navbar-offset-xl"></div>
+    <div class="navbar-background js-navbar-background"></div>
+</div>

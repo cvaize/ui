@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="bootstrap-theme-et">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +9,13 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css">
+    {{--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">--}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic">
     <link rel="stylesheet" href="{{mix("/css/all.css")}}">
     <link rel="stylesheet" href="{{mix("/css/bootstrap-theme-et.css")}}">
 </head>
-<body class="bootstrap-theme-et">
+<body class="bg-light">
 <?php
 $navbar = $navbar ?? true;
 ?>
@@ -23,7 +25,8 @@ $navbar = $navbar ?? true;
 
 @yield('content')
 
-<script src="{{mix("/js/all.js")}}"></script>
+<script src="{{mix("/js/start.js")}}"></script>
+<script src="{{mix("/js/libs.js")}}"></script>
 <script src="{{mix("/js/bootstrap-theme-et.js")}}"></script>
 </body>
 </html>

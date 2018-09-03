@@ -1,6 +1,7 @@
 {
-    "/js/all.js": "/js/all.js",
+    "/js/bootstrap-theme-et.js": "/js/bootstrap-theme-et.js",
     "/css/all.css": "/css/all.css",
     "/css/bootstrap-theme-et.css": "/css/bootstrap-theme-et.css",
-    "/js/bootstrap-theme-et.js": "/js/bootstrap-theme-et.js"
+    "/js/start.js": "/js/start.js",
+    "/js/libs.js": "/js/libs.js"
 }

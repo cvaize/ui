@@ -1,17 +1,42 @@
-html{
-  font-size: 14px;
+&{
+  font-size: $main-font-size;
+}
+body{
+  color: $body-color;
+  background-color: $body-bg;
+  line-height: $line-height-base;
 }
 .text-gray{
   color: $color3;
 }
+.lh--1{
+  line-height: 1;
+}
+.lh--1_4{
+  line-height: 1.4;
+}
 .fa-1_4x{
   font-size: 1.4em;
 }
+a{
+  color: #527FF2;
+  &:hover, &:focus{
+    color: #527FF2;
+  }
+}
 .link--with-icon-hover{
+  .link__hover-element{
+    &--underline{
+      text-decoration: underline;
+    }
+  }
   &:hover{
     text-decoration: none;
     .link__hover-element{
       text-decoration: underline;
+      &--underline{
+        text-decoration: none;
+      }
     }
   }
 }

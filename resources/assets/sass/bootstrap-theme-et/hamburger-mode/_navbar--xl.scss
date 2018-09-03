@@ -1,0 +1,95 @@
+@mixin navbar--xl(){
+
+  $dshsdughsg: 1px;
+  $hamburger-layer-width-xl: $hamburger-layer-width - $dshsdughsg;
+  $hamburger-layer-height-xl: $hamburger-layer-height - $dshsdughsg;
+  $hamburger-layer-spacing-xl: $hamburger-layer-spacing - $dshsdughsg;
+  $hamburger-padding-bottom-xl: 5px;
+
+
+  .hamburger {
+    padding: $hamburger-padding-y $hamburger-padding-x;
+    display: inline-block;
+    cursor: pointer;
+
+    transition-property: opacity, filter;
+    transition-duration: $hamburger-hover-transition-duration;
+    transition-timing-function: $hamburger-hover-transition-timing-function;
+
+    // Normalize (<button>)
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+
+    &:hover {
+      @if $hamburger-hover-use-filter == true {
+        filter: $hamburger-hover-filter;
+      }
+      @else {
+        opacity: $hamburger-hover-opacity;
+      }
+    }
+    padding-bottom: $hamburger-padding-bottom-xl;
+  }
+
+  .hamburger-box {
+    width: $hamburger-layer-width-xl;
+    height: $hamburger-layer-height-xl * 3 + $hamburger-layer-spacing-xl * 2;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: $hamburger-layer-height-xl / -2;
+
+    &,
+    &::before,
+    &::after {
+      width: $hamburger-layer-width-xl;
+      height: $hamburger-layer-height-xl;
+      background-color: $hamburger-layer-color;
+      border-radius: $hamburger-layer-border-radius;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    &::before {
+      top: ($hamburger-layer-spacing-xl + $hamburger-layer-height-xl) * -1;
+    }
+
+    &::after {
+      bottom: ($hamburger-layer-spacing-xl + $hamburger-layer-height-xl) * -1;
+    }
+  }
+
+  @if index($hamburger-types, arrow) {
+    /*
+     * Arrow
+     */
+    .hamburger--arrow.is-active {
+      .hamburger-inner {
+        &::before {
+          transform: translate3d($hamburger-layer-width * -0.2 - $dshsdughsg, -$dshsdughsg, 0) rotate(-45deg) scale(0.7, 1);
+        }
+
+        &::after {
+          transform: translate3d($hamburger-layer-width * -0.2 - $dshsdughsg, $dshsdughsg, 0) rotate(45deg) scale(0.7, 1);
+        }
+      }
+    }
+  }
+}

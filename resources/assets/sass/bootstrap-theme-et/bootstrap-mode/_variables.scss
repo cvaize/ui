@@ -1,5 +1,3 @@
-
-
 //
 // Color system
 //
@@ -16,24 +14,6 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-$grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(
-                (
-                        "100": $gray-100,
-                        "200": $gray-200,
-                        "300": $gray-300,
-                        "400": $gray-400,
-                        "500": $gray-500,
-                        "600": $gray-600,
-                        "700": $gray-700,
-                        "800": $gray-800,
-                        "900": $gray-900
-                ),
-                $grays
-);
-
-
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -45,26 +25,6 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
-                (
-                        "blue":       $blue,
-                        "indigo":     $indigo,
-                        "purple":     $purple,
-                        "pink":       $pink,
-                        "red":        $red,
-                        "orange":     $orange,
-                        "yellow":     $yellow,
-                        "green":      $green,
-                        "teal":       $teal,
-                        "cyan":       $cyan,
-                        "white":      $white,
-                        "gray":       $gray-600,
-                        "gray-dark":  $gray-800
-                ),
-                $colors
-);
 
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
@@ -75,21 +35,21 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
-$theme-colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$theme-colors: map-merge(
-                (
-                        "primary":    $primary,
-                        "secondary":  $secondary,
-                        "success":    $success,
-                        "info":       $info,
-                        "warning":    $warning,
-                        "danger":     $danger,
-                        "light":      $light,
-                        "dark":       $dark
-                ),
-                $theme-colors
-);
+// MODIFICATED
+
+//HTML
+$main-font-size: 14px;
+
+//Body
+$body-bg: $white;
+$body-color: $black;
+
+//Fonts
+$line-height-base: 2;
+
+//BGs
+$bg-light: #f0f0f0 !default;
+
 
 
 
@@ -116,8 +76,6 @@ $blue: $color2;
 
 $primary: $color2;
 
-//Body
-$body-bg: $color13;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -126,8 +84,6 @@ $body-color: $color1;
 $gray-600: $color5;
 $yellow: #f9b654;
 
-//Fonts
-$line-height-base: 1.5;
 
 $transition-time-function: .2s ease-in;
 
@@ -148,4 +104,4 @@ $input-focus-color: $color1;
 $enable-gradients: true;
 
 // Form validation
-$form-feedback-invalid-color:       theme-color("danger") !default;
+$form-feedback-invalid-color:       $red !default;

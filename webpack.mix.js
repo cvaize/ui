@@ -11,8 +11,15 @@ let mix = require('laravel-mix');
  |
  */
 
-mix
-    .js('resources/assets/js/all.js', 'public/js/all.js')
+mix.scripts([
+    './node_modules/jquery/dist/jquery.js',
+    './node_modules/popper.js/dist/umd/popper.js',
+    './node_modules/bootstrap/dist/js/bootstrap.js',
+    ], 'public/js/start.js')
+    .scripts([
+        './node_modules/selectric/src/jquery.selectric.js',
+        './node_modules/sweetalert2/dist/sweetalert2.all.min.js',
+    ], 'public/js/libs.js')
     // .copy('./resources/assets/libs/fontawesome/webfonts', 'public/webfonts')
     .js('resources/assets/js/bootstrap-theme-et/app.js', 'public/js/bootstrap-theme-et.js')
     .sass('resources/assets/sass/all.scss', 'public/css/all.css')

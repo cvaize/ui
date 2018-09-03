@@ -3,7 +3,7 @@
   padding-bottom: 0;
   display: inline-block;
   vertical-align: middle;
-  line-height: 3;
+  line-height: 2.857rem;
   *{
     line-height: $line-height-base;
     vertical-align: middle;
@@ -11,6 +11,11 @@
   i{
     line-height: 1;
   }
+}
+.btn-lg, .btn-group-lg > .btn{
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 3.5714rem;
 }
 .btn-primary {
   color: $white;
@@ -59,16 +64,11 @@
 .btn{
   &.small{
     font-size: 90%;
-    padding-top: .14rem;
-    padding-bottom: .14rem;
-    &.btn-lg{
-      padding-top: .5rem;
-      padding-bottom: .5rem;
-    }
   }
 }
 .btn-circle {
   width: 2.8rem;
+  line-height: 2.8rem;
   border-radius: 50%;
   text-align: center;
   padding-left: 0;

@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="container mb-5">
+    <div class="container my-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-lg-12">
                 <h1>Header 1</h1>
                 <h2>Header 2</h2>
                 <h3>Header 3</h3>
@@ -15,9 +15,9 @@
                 <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aliquid animi aperiam aspernatur consequuntur debitis dolore, dolorem doloribus eos eum fuga fugiat id impedit ipsa modi natus nesciunt nobis pariatur perferendis placeat porro quasi quo, ratione reiciendis rem repellendus sequi sunt tenetur ullam veritatis voluptas voluptate voluptatum. Eius error eum, excepturi explicabo itaque, libero nemo nesciunt placeat quae quas rem vel vitae! Architecto beatae consectetur cum, dignissimos et id incidunt ipsa magni perferendis, quia quisquam ratione tempore temporibus vero voluptates. Aliquid consequatur delectus dolore dolores ea eius eligendi fugiat ipsa nihil nulla obcaecati pariatur quae quas quia tenetur, veniam.</p>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aliquid animi aperiam aspernatur consequuntur debitis dolore, dolorem doloribus eos eum fuga fugiat id impedit ipsa modi natus nesciunt nobis pariatur perferendis placeat porro quasi quo, ratione reiciendis rem repellendus sequi sunt tenetur ullam veritatis voluptas voluptate voluptatum. Eius error eum, excepturi explicabo itaque, libero nemo nesciunt placeat quae quas rem vel vitae! Architecto beatae consectetur cum, dignissimos et id incidunt ipsa magni perferendis, quia quisquam ratione tempore temporibus vero voluptates. Aliquid consequatur delectus dolore dolores ea eius eligendi fugiat ipsa nihil nulla obcaecati pariatur quae quas quia tenetur, veniam.</p>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <a href="#">Sign in</a>
                         <br>
                         <a href="#" class="link--with-icon-hover"><i class="fas fa-angle-left mr-2"></i><span class="link__hover-element">Back</span></a>
@@ -43,27 +43,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-            </div>
-            <div class="col-6 bg-light ">
-                <div class="dropdown">
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>My Wallet</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-chart-line mr-2"></i>Active Trust</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-history mr-2"></i>History of Trust</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Sing Out</a>
-                    </div>
-                    <button class="dropdown-toggle"
-                            data-offset="-20px"
-                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-6">
+            {{--<div class="col-lg-6">--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-6 bg-light ">--}}
+                {{--<div class="dropdown">--}}
+                    {{--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">--}}
+                        {{--<a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>My Wallet</a>--}}
+                        {{--<a class="dropdown-item" href="#"><i class="fas fa-chart-line mr-2"></i>Active Trust</a>--}}
+                        {{--<a class="dropdown-item" href="#"><i class="fas fa-history mr-2"></i>History of Trust</a>--}}
+                        {{--<a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Sing Out</a>--}}
+                    {{--</div>--}}
+                    {{--<button class="dropdown-toggle"--}}
+                            {{--data-offset="-20px"--}}
+                            {{--type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                        {{--<span class="caret"></span>--}}
+                    {{--</button>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            <div class="col-lg-6">
 
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
 
                 <button class="btn btn-primary mb-3">ENTER</button>
                 <button class="btn btn-primary mb-3">CONTINUE</button>
@@ -113,28 +113,28 @@
 
                 <button class="btn btn-primary mb-3 btn-block btn-lg">ENTER</button>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-primary mb-3 btn-block btn-lg">CONTINUE</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-primary mb-3 btn-block btn-lg small">CONTINUE</button>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-outline-primary font-weight-bold mb-3 btn-block btn-lg">CHOOSE TEMPLATE</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-outline-primary font-weight-bold mb-3 btn-block btn-lg small">CHOOSE TEMPLATE</button>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-secondary font-weight-bold mb-3 btn-block btn-lg">CHOOSE TEMPLATE</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-outline-secondary font-weight-bold mb-3 btn-block btn-lg small">CHOOSE TEMPLATE</button>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                 <button class="btn btn-primary mb-3 btn-block btn-lg">LOAD MORE</button>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-primary btn--with-i btn--rounded mb-3 btn-block btn-lg">
                             <i class="fas fa-question-circle fa-1_4x"></i>
                             <span class="inner">
@@ -152,7 +152,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <button class="btn btn-primary btn--with-i btn--rounded mb-3 btn-block btn-lg small">
                             <i class="fas fa-question-circle fa-1_4x"></i>
                             <span class="inner">
@@ -166,10 +166,10 @@
 
 
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
 
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
                 <button class="btn btn-outline-success btn-circle mb-3">
                     <i class="fal fa-plus"></i>
                 </button>
@@ -231,19 +231,27 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-lg-12 text-center">
                 <h1>Формы</h1>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-7 mt-3">
+            <div class="col-lg-7 mt-3">
+                @include("forms._input", [
+                    "type"=>"text",
+                    "name"=>"address",
+                    "value"=>"",
+                    "label"=>"Wallet address:",
+                    "placeholder"=>"Wallet address:"
+                ])
                 @include("forms._input", [
                     "type"=>"text",
                     "name"=>"address",
                     "value"=>"gsfuo7232370462462083hef723",
-                    "label"=>"Wallet address:"
+                    "label"=>"Wallet address:",
+                    "placeholder"=>"Wallet address:"
                 ])
                 @include("forms._input", [
                     "type"=>"password",
@@ -321,7 +329,7 @@
                     ])
                 </div>
             </div>
-            <div class="col-6 ">
+            <div class="col-lg-6 ">
                 <div style="height: 10rem"></div>
                 <div class="py-5 my-5">
                     <form action="/">
