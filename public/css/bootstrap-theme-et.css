@@ -103,7 +103,6 @@
    * Vortex Reverse
    */
   /* caret style */
-  /* dropdown style */
 }
 
 .bootstrap-theme-et .selectric-wrapper {
@@ -2541,12 +2540,6 @@
 .bootstrap-theme-et .selectric-items li.highlighted {
   background: #f0f2fb;
   color: #3b94f7;
-}
-
-.bootstrap-theme-et .login__link-back {
-  position: absolute;
-  top: 50%;
-  left: 10%;
 }
 
 .bootstrap-theme-et .module__account-select {

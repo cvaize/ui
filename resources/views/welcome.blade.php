@@ -337,6 +337,7 @@
                             "name"=>"account_id",
                             "default"=>"/img/default.jpg",
                             "add"=>true,
+                            "required"=>true,
                             "addUrl"=>"/",
                             "addTarget"=>"_blank",
                             "addText"=>"Add account",

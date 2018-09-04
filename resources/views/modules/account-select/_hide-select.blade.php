@@ -1,5 +1,5 @@
 <div class="d-none">
-    <select class="js-{{$prefixClass}}account-select__select" name="{{$name??null}}">
+    <select class="js-{{$prefixClass}}account-select__select" name="{{$name??null}}" {{(isset($required) && $required === true)? "required": ""}}>
         @if(isset($placeholder))
             <option value="">{{$placeholder}}</option>
         @endif

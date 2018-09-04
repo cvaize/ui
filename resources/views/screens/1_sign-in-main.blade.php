@@ -34,49 +34,42 @@
                             "name"=>"account_id",
                             "default"=>"/img/default.jpg",
                             "add"=>true,
-                            "textAdd"=>"Add account",
+                            "required"=>true,
+                            "addUrl"=>"/",
+                            "addTarget"=>"_blank",
+                            "addText"=>"Add account",
                             "placeholder"=>"Select account",
                             "value"=>2,
                             "list"=>[
                                 1=>[
-                                    "name"=>"Иван Иванович Иванов",
-                                    "subtext"=>"ИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИвановИванов",
+                                    "name"=>"Константин Константинович Константинопольский",
+                                    "subtext"=>"mn0tx93",
                                     "avatar"=>"/img/tiger.jpg",
+                                    "delete"=>[
+                                        "active"=>true,
+                                        "ajax"=>true,
+                                        "url"=>"/",
+                                        "method"=>"get",
+                                        "data"=>[
+                                            "account_id"=>1
+                                        ],
+                                    ]
+
                                 ],
                                 2=>[
-                                    "name"=>"Константин Константинович Константинопольский",
-                                    "subtext"=>"ke tcu4n873cgt 387tnc8073tmn370ytm7803c t0m8n3ycmn0tx93ke tcu4n873cgt 387tnc8073tmn370ytm7803c t0m8n3ycmn0tx93",
-                                    "avatar"=>"/img/tiger.jpg",
-                                ],
-                                3=>[
-                                    "name"=>"Константин Константинович Константинопольский",
+                                    "name"=>"Константин Константинович",
                                     "subtext"=>"mn0tx93",
                                     "avatar"=>"/img/tiger.jpg",
-                                ],
-                                4=>[
-                                    "name"=>"Константин Константинович Константинопольский",
-                                    "subtext"=>"mn0tx93",
-                                    "avatar"=>"/img/tiger.jpg",
-                                ],
-                                5=>[
-                                    "name"=>"Константин Константинович Константинопольский",
-                                    "subtext"=>"mn0tx93",
-                                    "avatar"=>"/img/tiger.jpg",
-                                ],
-                                6=>[
-                                    "name"=>"Константин Константинович Константинопольский",
-                                    "subtext"=>"mn0tx93",
-                                    "avatar"=>"/img/tiger.jpg",
-                                ],
-                                7=>[
-                                    "name"=>"Константин Константинович Константинопольский",
-                                    "subtext"=>"mn0tx93",
-                                    "avatar"=>"/img/tiger.jpg",
-                                ],
-                                8=>[
-                                    "name"=>"Константин Константинович Константинопольский",
-                                    "subtext"=>"mn0tx93",
-                                    "avatar"=>"/img/tiger.jpg",
+                                    "delete"=>[
+                                        "active"=>true,
+                                        "ajax"=>true,
+                                        "url"=>"/",
+                                        "method"=>"get",
+                                        "data"=>[
+                                            "account_id"=>2
+                                        ],
+                                    ]
+
                                 ],
                             ]
                         ])
