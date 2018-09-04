@@ -149,10 +149,18 @@ __webpack_require__(4);
 /***/ (function(module, exports) {
 
 
-(function ($) {
+(function ($, swal) {
     var prefixClass = "module__";
     var jsPrefix = ".js-";
-
+    var debug = true;
+    if (debug && !swal) {
+        console.log("Подключите SweetAlert2");
+    }
+    var swalWithBootstrapButtons = swal.mixin({
+        confirmButtonClass: 'btn btn-success ml-3',
+        cancelButtonClass: 'btn btn-danger mr-3',
+        buttonsStyling: false
+    });
     //Скрить - Покзать список
     var showHide = function showHide(command) {
         var list = $(jsPrefix + prefixClass + "account-select__wrap-list");
@@ -176,6 +184,15 @@ __webpack_require__(4);
             list.removeClass("show");
             list.attr("data-show", "hide");
         }
+    };
+    var isShow = function isShow() {
+        var list = $(jsPrefix + prefixClass + "account-select__wrap-list");
+        var attrShow = list.attr("data-show");
+        var response = true;
+        if (!attrShow || attrShow !== "show") {
+            response = false;
+        }
+        return response;
     };
 
     //Выбрать option
@@ -214,26 +231,80 @@ __webpack_require__(4);
                 content = target;
             }
             selectOption(content);
+
+            if (debug) {
+                console.log("Выбрать option");
+            }
+
+            return;
         }
 
         //Скрить - Покзать список
         if (target.is(jsPrefix + prefixClass + "account-select") || target.parents(jsPrefix + prefixClass + "account-select").length > 0) {
             event.preventDefault();
             showHide();
+
+            if (debug) {
+                console.log("Скрить - Покзать список");
+            }
+            return;
         }
 
-        //TODO: Сделать скрытие селектора при клике на элементы не относящиеся к селектору
-        // if(target.is(
-        //     jsPrefix+prefixClass+"account-select__wrapper"
-        // ) && target.parents(
-        //     jsPrefix+prefixClass+"account-select__wrapper"
-        // ).length > 0){
-        //     console.log(12313);
-        //     showHide("hide");
-        // }
+        //Cкрывать список если он не скрыт при клике
+        if (!target.is(jsPrefix + prefixClass + "account-select__wrapper") && target.parents(jsPrefix + prefixClass + "account-select__wrapper").length === 0 && isShow()) {
+            event.preventDefault();
+            showHide("hide");
 
+            if (debug) {
+                console.log(target.parents(jsPrefix + prefixClass + "account-select__wrapper"));
+                console.log(target, "Cкрывать список если он не скрыт при клике");
+            }
+            return;
+        }
+
+        // Нажатие на кнопку удалить
+        var parents = target.parents(jsPrefix + prefixClass + "account-select__delete");
+        if (target.is(jsPrefix + prefixClass + "account-select__delete") || parents.length > 0) {
+
+            if (debug) {
+                console.log("Нажатие на кнопку удалить");
+            }
+            event.preventDefault();
+            var element = target;
+            if (!target.is(jsPrefix + prefixClass + "account-select__delete")) {
+                element = parents;
+            }
+            var url = element.attr("data-url");
+            var method = element.attr("data-method");
+            var data = element.attr("data-data");
+            if (data.length > 0) {
+                data = JSON.parse(data);
+            }
+
+            swalWithBootstrapButtons({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then(function (result) {
+                if (result.value) {
+                    $.ajax(url, {
+                        method: method,
+                        data: data
+                    }).then(function (data) {
+                        swalWithBootstrapButtons('Deleted!', 'Your file has been deleted.', 'success');
+                    }).cache(function () {
+                        console.log("Error account-select delete");
+                    });
+                }
+            });
+            return;
+        }
     });
-})(jQuery);
+})(jQuery, swal);
 
 /***/ }),
 /* 5 */

@@ -73,25 +73,26 @@
   text-align: center;
   padding-left: 0;
   padding-right: 0;
+  vertical-align: middle;
   white-space: normal; /* восстанавливаем свойству значение по умолчанию */
   i{
     font-size: 1.2rem;
     line-height: 1;
-    position: relative;
-    bottom: 1px;
   }
   &.small{
-    width: 1.72rem;
+    $btn-circle-small-size: 1.72rem;
+    width: $btn-circle-small-size;
+    min-width: $btn-circle-small-size;
+    max-width: $btn-circle-small-size;
     padding: 0;
     border-radius: 50%;
     text-align: center;
     white-space: normal;
-    line-height: 2;
+    line-height: 0;
+    height: $btn-circle-small-size;
     i{
       font-size: 1rem;
-      line-height: 1;
-      position: relative;
-      bottom: 1px;
+      line-height: 0;
     }
   }
   &.middle{
@@ -100,12 +101,10 @@
     border-radius: 50%;
     text-align: center;
     white-space: normal;
-    line-height: 2.5;
+    line-height: 2.36rem;
     i{
       font-size: 1.1rem;
       line-height: 1;
-      position: relative;
-      bottom: 1px;
     }
   }
 }

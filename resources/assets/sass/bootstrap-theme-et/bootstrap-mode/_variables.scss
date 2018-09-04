@@ -1,107 +1,11 @@
-//
-// Color system
-//
-
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
-
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-
-
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
-
-// MODIFICATED
-
-//HTML
-$main-font-size: 14px;
-
-//Body
-$body-bg: $white;
-$body-color: $black;
-
-//Fonts
-$line-height-base: 2;
-
-//BGs
-$bg-light: #f0f0f0 !default;
+@import "variables/colors";
+@import "variables/typografy";
+@import "variables/backgrounds";
+@import "variables/buttons";
+@import "variables/forms";
+@import "variables/tags";
+@import "variables/navbar";
+@import "variables/inputs";
 
 
 
-
-// Colors
-$color1: #000000;
-$color2: #3b94f7;
-$color3: #666666;
-$color4: #e6f2fe;
-$color5: #97a4ae;
-$color6: #22b557;
-$color7: #d8ffe3;
-$color8: #f9b654;
-$color9: #97a4b0;
-$color10: #ebeef2;
-$color11: #f8f9fd;
-$color12: #b9caef;
-$color13: #72b3ff;
-$white: #ffffff;
-
-$color13: #f0f0f0;
-
-$blue: $color2;
-
-
-$primary: $color2;
-
-
-// Typography
-$font-family-sans-serif: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-size-base: .9rem;
-$body-color: $color1;
-$gray-600: $color5;
-$yellow: #f9b654;
-
-
-$transition-time-function: .2s ease-in;
-
-//Buttons
-$btn-padding-y: .7rem;
-$btn-padding-x: 2.2rem;
-$btn-primary--hover-background: #99c8ff;
-$btn-outline-primary--hover-background: #e6f2ff;
-$btn--rounded-border-radius: 2rem;
-$btn--with-i-color: #d7e9ff;
-
-//Inputs
-$input-btn-focus-box-shadow: none;
-$input-focus-border-color: $color2;
-$input-focus-color: $color1;
-
-//Gradients
-$enable-gradients: true;
-
-// Form validation
-$form-feedback-invalid-color:       $red !default;

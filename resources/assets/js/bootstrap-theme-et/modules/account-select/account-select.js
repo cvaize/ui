@@ -1,8 +1,16 @@
 
-(function ($) {
+(function ($, swal) {
     let prefixClass = "module__";
     let jsPrefix = ".js-";
-
+    let debug = true;
+    if(debug && !swal){
+        console.log("Подключите SweetAlert2");
+    }
+    let swalWithBootstrapButtons = swal.mixin({
+        confirmButtonClass: 'btn btn-success ml-3',
+        cancelButtonClass: 'btn btn-danger mr-3',
+        buttonsStyling: false,
+    });
     //Скрить - Покзать список
     let showHide = function(command){
         let list = $(jsPrefix+prefixClass+"account-select__wrap-list");
@@ -25,6 +33,16 @@
             list.attr("data-show", "hide");
         }
     };
+    let isShow = function(){
+        let list = $(jsPrefix+prefixClass+"account-select__wrap-list");
+        let attrShow = list.attr("data-show");
+        let response = true;
+        if(!attrShow || attrShow !== "show"){
+            response = false;
+        }
+        return response;
+    };
+
 
     //Выбрать option
     let selectOption = function(content){
@@ -66,6 +84,12 @@
             event.preventDefault();
             if(content.length === 0){content = target;}
             selectOption(content);
+
+            if(debug){
+                console.log("Выбрать option");
+            }
+
+            return;
         }
 
 
@@ -77,20 +101,85 @@
         ).length > 0){
             event.preventDefault();
             showHide();
+
+            if(debug){
+                console.log("Скрить - Покзать список");
+            }
+            return;
         }
 
-        //TODO: Сделать скрытие селектора при клике на элементы не относящиеся к селектору
-        // if(target.is(
-        //     jsPrefix+prefixClass+"account-select__wrapper"
-        // ) && target.parents(
-        //     jsPrefix+prefixClass+"account-select__wrapper"
-        // ).length > 0){
-        //     console.log(12313);
-        //     showHide("hide");
-        // }
+        //Cкрывать список если он не скрыт при клике
+        if(!target.is(
+            jsPrefix+prefixClass+"account-select__wrapper"
+        ) && target.parents(
+            jsPrefix+prefixClass+"account-select__wrapper"
+        ).length === 0 && isShow()){
+            event.preventDefault();
+            showHide("hide");
+
+            if(debug){
+                console.log(target.parents(
+                    jsPrefix+prefixClass+"account-select__wrapper"
+                ));
+                console.log(target, "Cкрывать список если он не скрыт при клике");
+            }
+            return;
+        }
+
+        // Нажатие на кнопку удалить
+        let parents = target.parents(
+            jsPrefix+prefixClass+"account-select__delete"
+        );
+        if(target.is(
+            jsPrefix+prefixClass+"account-select__delete"
+        ) || parents.length > 0){
+
+            if(debug){
+                console.log("Нажатие на кнопку удалить");
+            }
+            event.preventDefault();
+            let element = target;
+            if(!target.is(
+                jsPrefix+prefixClass+"account-select__delete"
+            )){
+                element = parents;
+            }
+            let url = element.attr("data-url");
+            let method = element.attr("data-method");
+            let data = element.attr("data-data");
+            if(data.length>0){
+                data = JSON.parse(data);
+            }
+
+            swalWithBootstrapButtons({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax(url, {
+                        method: method,
+                        data: data
+                    }).then(function (data) {
+                        swalWithBootstrapButtons(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }).cache(function () {
+                        console.log("Error account-select delete");
+                    });
+                }
+            });
+            return;
+        }
 
 
 
     });
 
-})(jQuery);
+})(jQuery, swal);

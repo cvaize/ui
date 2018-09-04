@@ -1,21 +1,23 @@
+
+
 .form-control-label {
-  font-size: 1.2rem;
+  font-size: $form-control-label-font-size;
 }
 .form-control {
-  font-size: 1.143rem;
-  padding: 0 1.6rem;
-  height: 2.857rem;
-  background: #ffffff;
-  color: $black;
-  font-weight: 300;
-  border-color: #D9D9D9;
+  font-size: $form-control-font-size;
+  padding: $form-control-padding;
+  height: $form-control-height;
+  background: $form-control-background;
+  color: $form-control-color;
+  font-weight: $form-control-font-weight;
+  border-color: $form-control-border-color;
   &:focus{
     outline: none;
     box-shadow: none;
     &~.input-group-append .input-group-text{
-      background-color: $white;
-      border-color: $color2;
-      color: $color12;
+      background-color: $input-group-append__input-group-text-background-color;
+      border-color: $input-group-append__input-group-text-border-color;
+      color: $input-group-append__input-group-text-color;
     }
   }
   &.is-invalid:focus{
@@ -27,29 +29,32 @@
 }
 .input-group{
   .input-group-text{
-    font-size: 1rem;
-    padding: 0.2rem 1.4rem;
-    color: $color9;
-    font-weight: 300;
-    transition: all .2s ease-in;
+    font-size: $input-group__input-group-text-font-size;
+    padding: $input-group__input-group-text-padding;
+    color: $input-group__input-group-text-color;
+    font-weight: $input-group__input-group-text-font-weight;
+    transition: $input-group__input-group-text-font-transition;
   }
 }
 .input-group.active{
   .input-group-text{
-    background-color: $white;
-    border-color: $color2;
-    color: $color12;
-    transition: all .2s ease-in;
+    background-color: $input-group__input-group--active-text-background-color;
+    border-color: $input-group__input-group--active-text-border-color;
+    color: $input-group__input-group--active-text-color;
+    transition: $input-group__input-group--active-text-transition;
     &.is-invalid{
       border-color: $form-feedback-invalid-color;
     }
   }
 }
+
+
+
 .form-group--outline{
   .form-control{
-    background-color: $white;
-    border-color: $color10;
-    color: $color9;
+    background-color: $form-group--outline__form-control-background-color;
+    border-color: $form-group--outline__form-control-border-color;
+    color: $form-group--outline__form-control-color;
   }
   .input-group{
     .input-group-text{
@@ -68,17 +73,17 @@
   }
   .input-group.active{
     .form-control{
-      background-color: $white;
-      border-color: $color2;
-      color: $color1;
+      background-color: $form-group--outline__input-group--active__form-control-background-color;
+      border-color: $form-group--outline__input-group--active__form-control-border-color;
+      color: $form-group--outline__input-group--active__form-control-color;
       &.is-invalid{
         border-color: $form-feedback-invalid-color;
       }
     }
     .input-group-text{
-      background-color: $white;
-      border-color: $color2;
-      color: $color12;
+      background-color: $form-group--outline__input-group--active__input-group-text-background-color;
+      border-color: $form-group--outline__input-group--active__input-group-text-border-color;
+      color: $form-group--outline__input-group--active__input-group-text-color;
       &.is-invalid{
         border-color: $form-feedback-invalid-color;
       }

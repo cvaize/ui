@@ -1,12 +1,12 @@
 <div class="navbar__wrapper js-navbar-collapse">
-    <nav class="navbar navbar-expand-xl navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
         <div class="navbar__content-wrapper">
             <a class="navbar-brand pb-2" href="#">
                 <img src="./img/screens/navbar/ET-Logo--700.svg" alt="logo">
             </a>
 
-            <div class="collapse navbar-collapse navbar__collapse--xl">
+            <div class="collapse navbar-collapse navbar__collapse--lg">
                 <ul class="navbar-nav mr-auto font-weight-bold w-100">
                     <li class="nav-item">
                         <a class="nav-link link--with-icon-hover" href="#">
@@ -81,6 +81,6 @@
         </div>
 
     </nav>
-    <div class="navbar-offset navbar-offset-xl"></div>
+    <div class="navbar-offset navbar-offset-lg"></div>
     <div class="navbar-background js-navbar-background"></div>
 </div>

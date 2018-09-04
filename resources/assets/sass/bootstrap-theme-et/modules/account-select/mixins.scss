@@ -1,4 +1,5 @@
 @mixin account-select($prefix){
+  $content-min-height: 3.57143rem;
   .#{$prefix}account-select{
     background: $white;
     border: 1px solid $color5;
@@ -65,7 +66,7 @@
       color: $color9;
     }
     &__content{
-      min-height: 3rem;
+      min-height: $content-min-height;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -75,7 +76,7 @@
       cursor: pointer;
     }
     &__add{
-      height: 3rem;
+      height: $content-min-height;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -83,13 +84,14 @@
       width: 100%;
     }
     &__box{
-      height: 3rem;
-      width: 3rem;
+      height: $content-min-height;
+      width: $content-min-height;
       display: flex;
       justify-content: center;
       align-items: center;
       color: $color5;
       text-decoration: none;
+      cursor: pointer;
       &:hover{
         color: $color5;
         text-decoration: none;

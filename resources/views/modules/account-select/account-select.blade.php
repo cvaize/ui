@@ -7,7 +7,7 @@
 $prefixClass = "module__"
 ?>
 
-<div class="{{$prefixClass}}account-select__wrapper">
+<div class="{{$prefixClass}}account-select__wrapper js-{{$prefixClass}}account-select__wrapper">
     @include("modules.account-select._hide-select")
     <div class="{{$prefixClass}}account-select js-{{$prefixClass}}account-select">
         <?php

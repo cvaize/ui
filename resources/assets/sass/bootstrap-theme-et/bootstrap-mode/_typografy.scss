@@ -1,6 +1,10 @@
 &{
-  font-size: $main-font-size;
+  font-size: $html-font-size;
+  @media #{$MaxW--md} {
+    font-size: $html-font-size-md;
+  }
 }
+
 body{
   color: $body-color;
   background-color: $body-bg;
@@ -19,9 +23,9 @@ body{
   font-size: 1.4em;
 }
 a{
-  color: #527FF2;
+  color: $link-color;
   &:hover, &:focus{
-    color: #527FF2;
+    color: $link-color-hover;
   }
 }
 .link--with-icon-hover{

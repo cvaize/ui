@@ -1,0 +1,31 @@
+
+//Sizes Window Max-Width
+$MaxW--lg: (max-width: 1199.98px);
+$MaxW--md: (max-width: 991.98px);
+$MaxW--sm: (max-width: 767.98px);
+$MaxW--xs: (max-width: 575.98px);
+
+//Sizes Window Min-Width
+$MinW--lg: (min-width: 1200px);
+$MinW--md: (min-width: 992px);
+$MinW--sm: (min-width: 768px);
+$MinW--xs: (min-width: 576px);
+
+//HTML
+$html-font-size: 14px;
+$html-font-size-md: 12px;
+
+//Body
+$body-bg: $white;
+$body-color: $black;
+$body-family: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+//Fonts
+$line-height-base: 2;
+
+//Links
+$link-color: #527FF2;
+$link-color-hover: #527FF2;
+
+//Gradients
+$enable-gradients: true;
