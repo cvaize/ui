@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-6" style="min-height: 100vh;">
+        <div class="col-lg-6" style="min-height: 100vh;">
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <div class="my-5">
                     <a href="#">

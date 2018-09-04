@@ -1609,6 +1609,11 @@
   z-index: 999999999999;
 }
 
+.bootstrap-theme-et .swal2-popup .swal2-actions {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .bootstrap-theme-et {
   font-size: 14px;
 }
@@ -1620,13 +1625,22 @@
 }
 
 .bootstrap-theme-et body {
-  color: #000;
+  color: #395180;
   background-color: #ffffff;
   line-height: 2;
 }
 
+.bootstrap-theme-et small,
+.bootstrap-theme-et .small {
+  font-size: 90%;
+}
+
 .bootstrap-theme-et .text-gray {
-  color: #666666;
+  color: #404040;
+}
+
+.bootstrap-theme-et .text-muted {
+  color: #97A4AF;
 }
 
 .bootstrap-theme-et .lh--1 {
@@ -1642,12 +1656,12 @@
 }
 
 .bootstrap-theme-et a {
-  color: #527FF2;
+  color: #3893FF;
 }
 
 .bootstrap-theme-et a:hover,
 .bootstrap-theme-et a:focus {
-  color: #527FF2;
+  color: #3893FF;
 }
 
 .bootstrap-theme-et .link--with-icon-hover .link__hover-element--underline {
@@ -1664,6 +1678,56 @@
 
 .bootstrap-theme-et .link--with-icon-hover:hover .link__hover-element--underline {
   text-decoration: none;
+}
+
+.bootstrap-theme-et .display-2_5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.bootstrap-theme-et .text-black {
+  color: #000;
+}
+
+.bootstrap-theme-et h1,
+.bootstrap-theme-et .h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.bootstrap-theme-et h2,
+.bootstrap-theme-et .h2,
+.bootstrap-theme-et h3,
+.bootstrap-theme-et .h3,
+.bootstrap-theme-et h4,
+.bootstrap-theme-et .h4,
+.bootstrap-theme-et h5,
+.bootstrap-theme-et .h5,
+.bootstrap-theme-et h6,
+.bootstrap-theme-et .h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.bootstrap-theme-et h2,
+.bootstrap-theme-et .h2 {
+  font-size: 2.71rem;
+}
+
+.bootstrap-theme-et h3,
+.bootstrap-theme-et .h3 {
+  font-size: 2.14rem;
+}
+
+.bootstrap-theme-et h4,
+.bootstrap-theme-et .h4 {
+  font-size: 1.57rem;
+}
+
+.bootstrap-theme-et h5,
+.bootstrap-theme-et .h5 {
+  font-size: 1.21rem;
 }
 
 .bootstrap-theme-et .bg-light {
@@ -1797,11 +1861,11 @@
 }
 
 .bootstrap-theme-et .btn {
-  padding-top: 0;
-  padding-bottom: 0;
+  font-size: 0.85714286rem;
+  padding: 0 2.42857143rem;
   display: inline-block;
   vertical-align: middle;
-  line-height: 2.857rem;
+  line-height: 2.85714286rem;
 }
 
 .bootstrap-theme-et .btn * {
@@ -1817,53 +1881,64 @@
 .bootstrap-theme-et .btn-group-lg > .btn {
   padding-top: 0;
   padding-bottom: 0;
-  line-height: 3.5714rem;
+  font-size: 1.14285714rem;
+  line-height: 3.57142857rem;
 }
 
 .bootstrap-theme-et .btn-primary {
   color: #ffffff;
-  background: #3b94f7 -webkit-gradient(linear, left top, left bottom, from(#58a4f8), to(#3b94f7)) repeat-x;
-  background: #3b94f7 linear-gradient(180deg, #58a4f8, #3b94f7) repeat-x;
-  border-color: #3b94f7;
+  background: #3893FF -webkit-gradient(linear, left top, left bottom, from(#56a3ff), to(#3893FF)) repeat-x;
+  background: #3893FF linear-gradient(180deg, #56a3ff, #3893FF) repeat-x;
+  border-color: #ffffff;
 }
 
 .bootstrap-theme-et .btn-primary:hover {
   color: #ffffff;
-  background: #99c8ff -webkit-gradient(linear, left top, left bottom, from(#a8d0ff), to(#99c8ff)) repeat-x;
-  background: #99c8ff linear-gradient(180deg, #a8d0ff, #99c8ff) repeat-x;
-  border-color: #99c8ff;
+  background: #3893FF -webkit-gradient(linear, left top, left bottom, from(#56a3ff), to(#3893FF)) repeat-x;
+  background: #3893FF linear-gradient(180deg, #56a3ff, #3893FF) repeat-x;
+  border-color: #3893FF;
 }
 
 .bootstrap-theme-et .btn-outline-primary {
-  color: #3b94f7;
+  color: #3893FF;
   background: #ffffff -webkit-gradient(linear, left top, left bottom, from(white), to(#ffffff)) repeat-x;
   background: #ffffff linear-gradient(180deg, white, #ffffff) repeat-x;
-  border-color: #3b94f7;
+  border-color: #3893FF;
 }
 
 .bootstrap-theme-et .btn-outline-primary:hover {
-  color: #3b94f7;
+  color: #3893FF;
   background: #e6f2ff -webkit-gradient(linear, left top, left bottom, from(#eaf4ff), to(#e6f2ff)) repeat-x;
   background: #e6f2ff linear-gradient(180deg, #eaf4ff, #e6f2ff) repeat-x;
   border-color: #e6f2ff;
 }
 
 .bootstrap-theme-et .btn-secondary {
-  color: #97a4b0;
-  background: #ebeef2 -webkit-gradient(linear, left top, left bottom, from(#eef1f4), to(#ebeef2)) repeat-x;
-  background: #ebeef2 linear-gradient(180deg, #eef1f4, #ebeef2) repeat-x;
-  border-color: #ebeef2;
+  color: #3893FF;
+  background: #E7F2FF -webkit-gradient(linear, left top, left bottom, from(#ebf4ff), to(#E7F2FF)) repeat-x;
+  background: #E7F2FF linear-gradient(180deg, #ebf4ff, #E7F2FF) repeat-x;
+  border-color: transparent;
 }
 
 .bootstrap-theme-et .btn-secondary:hover {
-  color: #3b94f7;
-  background: #e6f2fe -webkit-gradient(linear, left top, left bottom, from(#eaf4fe), to(#e6f2fe)) repeat-x;
-  background: #e6f2fe linear-gradient(180deg, #eaf4fe, #e6f2fe) repeat-x;
-  border-color: #e6f2fe;
+  color: #3893FF;
+  background: #ffffff -webkit-gradient(linear, left top, left bottom, from(white), to(#ffffff)) repeat-x;
+  background: #ffffff linear-gradient(180deg, white, #ffffff) repeat-x;
+  border-color: #3893FF;
+}
+
+.bootstrap-theme-et .btn-outline-secondary {
+  color: #3893FF;
+  background: #ffffff -webkit-gradient(linear, left top, left bottom, from(white), to(#ffffff)) repeat-x;
+  background: #ffffff linear-gradient(180deg, white, #ffffff) repeat-x;
+  border-color: #3893FF;
 }
 
 .bootstrap-theme-et .btn-outline-secondary:hover {
-  color: #ffffff;
+  color: #3893FF;
+  background: #E7F2FF -webkit-gradient(linear, left top, left bottom, from(#ebf4ff), to(#E7F2FF)) repeat-x;
+  background: #E7F2FF linear-gradient(180deg, #ebf4ff, #E7F2FF) repeat-x;
+  border-color: transparent;
 }
 
 .bootstrap-theme-et .btn--rounded {
@@ -1875,7 +1950,7 @@
 }
 
 .bootstrap-theme-et .btn--with-i i {
-  color: #d7e9ff;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .bootstrap-theme-et .btn.small {
@@ -1931,7 +2006,7 @@
 }
 
 .bootstrap-theme-et .tag {
-  color: #3b94f7;
+  color: #3893FF;
   background: #e6f2fe;
   display: inline-block;
   vertical-align: middle;
@@ -2065,14 +2140,18 @@
   padding-left: 2.25rem;
 }
 
+.bootstrap-theme-et .form-check-label {
+  color: #97A4AF;
+}
+
 .bootstrap-theme-et .form-control-label {
-  font-size: 1.2rem;
+  font-size: 1.21428571rem;
 }
 
 .bootstrap-theme-et .form-control {
-  font-size: 1.143rem;
-  padding: 0 1.6rem;
-  height: 2.857rem;
+  font-size: 1rem;
+  padding: 0 1.71428571rem;
+  height: 3.21428571rem;
   background: #ffffff;
   color: #000;
   font-weight: 300;
@@ -2097,7 +2176,7 @@
 }
 
 .bootstrap-theme-et .input-group-text.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .input-group .input-group-text {
@@ -2111,14 +2190,14 @@
 
 .bootstrap-theme-et .input-group.active .input-group-text {
   background-color: #ffffff;
-  border-color: #3b94f7;
+  border-color: #3893FF;
   color: #b9caef;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
 .bootstrap-theme-et .input-group.active .input-group-text.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .form-group--outline .form-control {
@@ -2134,35 +2213,35 @@
 }
 
 .bootstrap-theme-et .form-group--outline .input-group .input-group-text.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .form-group--outline .input-group .form-control.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .form-group--outline .input-group.active .form-control {
   background-color: #ffffff;
-  border-color: #3b94f7;
+  border-color: #3893FF;
   color: #000000;
 }
 
 .bootstrap-theme-et .form-group--outline .input-group.active .form-control.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .form-group--outline .input-group.active .input-group-text {
   background-color: #ffffff;
-  border-color: #3b94f7;
+  border-color: #3893FF;
   color: #b9caef;
 }
 
 .bootstrap-theme-et .form-group--outline .input-group.active .input-group-text.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .form-group--outline .form-control.is-invalid {
-  border-color: #dc3545;
+  border-color: #F93A45;
 }
 
 .bootstrap-theme-et .form-control-label ~ .form-text {
@@ -2534,12 +2613,12 @@
 
 .bootstrap-theme-et .selectric-items li:hover {
   background: #f8f9fd;
-  color: #3b94f7;
+  color: #3893FF;
 }
 
 .bootstrap-theme-et .selectric-items li.highlighted {
   background: #f0f2fb;
-  color: #3b94f7;
+  color: #3893FF;
 }
 
 .bootstrap-theme-et .module__account-select {
@@ -2747,5 +2826,239 @@
   background: #97a4b0;
   top: 50%;
   left: 0;
+}
+
+.bootstrap-theme-et .checkboxPhoto {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.bootstrap-theme-et .checkboxPhoto__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ffffff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-bottom: 1rem;
+  text-align: center;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.bootstrap-theme-et .checkboxPhoto__label--width-limitation {
+  width: 11.857rem;
+}
+
+.bootstrap-theme-et .checkboxPhoto__text {
+  font-size: 1.29rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.43rem;
+  color: #000;
+}
+
+.bootstrap-theme-et .checkboxPhoto__button {
+  width: 100%;
+  position: relative;
+  background: #32DA9E;
+}
+
+.bootstrap-theme-et .checkboxPhoto__button__box--checked {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: #ffffff;
+  background: transparent;
+  font-size: 1.36rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.bootstrap-theme-et .checkboxPhoto__button__box--no-checked {
+  width: 100%;
+  opacity: 1;
+  font-size: 0.857rem;
+  color: #797979;
+  background: #D9D9D9;
+  -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 0.286rem 0;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.bootstrap-theme-et .checkboxPhoto__wrapper-avatar {
+  position: relative;
+  width: 6.57rem;
+  height: 6.57rem;
+  min-width: 6.57rem;
+  margin: 1.43rem;
+}
+
+.bootstrap-theme-et .checkboxPhoto__avatar {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.bootstrap-theme-et .checkboxPhoto:checked ~ .checkboxPhoto__label {
+  -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.bootstrap-theme-et .checkboxPhoto:checked ~ .checkboxPhoto__label .checkboxPhoto__button__box--checked {
+  opacity: 1;
+}
+
+.bootstrap-theme-et .checkboxPhoto:checked ~ .checkboxPhoto__label .checkboxPhoto__button__box--no-checked {
+  opacity: 0;
+}
+
+.bootstrap-theme-et .checkboxIcon {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.bootstrap-theme-et .checkboxIcon__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ffffff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-bottom: 1rem;
+  text-align: center;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.bootstrap-theme-et .checkboxIcon__label--width-limitation {
+  width: 11.857rem;
+}
+
+.bootstrap-theme-et .checkboxIcon__text {
+  font-size: 1.29rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.43rem;
+  color: #000;
+}
+
+.bootstrap-theme-et .checkboxIcon__button {
+  width: 100%;
+  position: relative;
+  background: #32DA9E;
+}
+
+.bootstrap-theme-et .checkboxIcon__button__box--checked {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: #ffffff;
+  background: transparent;
+  font-size: 1.36rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.bootstrap-theme-et .checkboxIcon__button__box--no-checked {
+  width: 100%;
+  opacity: 1;
+  font-size: 0.857rem;
+  color: #797979;
+  background: #D9D9D9;
+  -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 0.286rem 0;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.bootstrap-theme-et .checkboxIcon__wrapper-avatar {
+  position: relative;
+  width: 6.57rem;
+  height: 6.57rem;
+  min-width: 6.57rem;
+  margin: 1.43rem;
+}
+
+.bootstrap-theme-et .checkboxIcon__avatar {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.bootstrap-theme-et .checkboxIcon:checked ~ .checkboxIcon__label {
+  -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.bootstrap-theme-et .checkboxIcon:checked ~ .checkboxIcon__label .checkboxIcon__button__box--checked {
+  opacity: 1;
+}
+
+.bootstrap-theme-et .checkboxIcon:checked ~ .checkboxIcon__label .checkboxIcon__button__box--no-checked {
+  opacity: 0;
 }
 

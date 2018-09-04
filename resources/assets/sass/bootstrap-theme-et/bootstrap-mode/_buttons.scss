@@ -1,9 +1,9 @@
 .btn{
-  padding-top: 0;
-  padding-bottom: 0;
+  font-size: #{$btn-font-size-base/$html-font-size-var}rem;
+  padding: 0 #{$btn-padding-y/$html-font-size-var}rem;
   display: inline-block;
   vertical-align: middle;
-  line-height: 2.857rem;
+  line-height: #{$btn-height-base/$html-font-size-var}rem;
   *{
     line-height: $line-height-base;
     vertical-align: middle;
@@ -15,41 +15,47 @@
 .btn-lg, .btn-group-lg > .btn{
   padding-top: 0;
   padding-bottom: 0;
-  line-height: 3.5714rem;
+  font-size: #{$btn-font-size-base--lg/$html-font-size-var}rem;
+  line-height: #{$btn-height-base--lg/$html-font-size-var}rem;
 }
 .btn-primary {
-  color: $white;
+  color: $btn-primary-color;
   @include gradient-bg($primary);
-  border-color: $primary;
+  border-color: $btn-primary-hover-color;
   @include hover {
-    color: $white;
+    color: $btn-primary-hover-color;
     @include gradient-bg($btn-primary--hover-background);
     border-color: $btn-primary--hover-background;
   }
 }
 .btn-outline-primary {
-  color: $primary;
+  color: $btn-outline-primary-color;
   @include gradient-bg($white);
-  border-color: $primary;
+  border-color: $btn-outline-primary-color;
   @include hover {
-    color: $primary;
+    color: $btn-outline-primary-color;
     @include gradient-bg($btn-outline-primary--hover-background);
     border-color: $btn-outline-primary--hover-background;
   }
 }
 .btn-secondary {
-  color: $color9;
-  @include gradient-bg($color10);
-  border-color: $color10;
+  color: $primary;
+  @include gradient-bg($blue-200);
+  border-color: transparent;
   @include hover {
     color: $primary;
-    @include gradient-bg($color4);
-    border-color: $color4;
+    @include gradient-bg($white);
+    border-color: $primary;
   }
 }
 .btn-outline-secondary {
+  color: $primary;
+  @include gradient-bg($white);
+  border-color: $primary;
   @include hover {
-    color: $white;
+    color: $primary;
+    @include gradient-bg($blue-200);
+    border-color: transparent;
   }
 }
 .btn--rounded{

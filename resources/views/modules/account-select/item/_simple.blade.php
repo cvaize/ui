@@ -4,7 +4,8 @@
     <div class="{{$prefixClass}}account-select__box js-{{$prefixClass}}account-select__delete"
          data-url="{{$delete["url"] ?? null}}"
          data-method="{{$delete["method"] ?? null}}"
-         data-data="{{json_encode($delete["data"]) ?? null}}"
+         data-data="{{isset($delete["data"])?json_encode($delete["data"]): null}}"
+         data-popup="{{isset($delete["popup"])?json_encode($delete["popup"]): null}}"
     >
         <i class="{{$prefixClass}}account-select__box__icon fas fa-times"></i>
     </div>

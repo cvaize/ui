@@ -1,9 +1,19 @@
 
 
 //Buttons
-$btn-padding-y: .7rem;
+$btn-height-base: 40; //Данные в px, без обозначения для расета формул в rem
+$btn-font-size-base: 12;
+$btn-font-size-base--lg: 16;
+$btn-height-base--lg: 50;
+$btn-padding-y: 34;//px
 $btn-padding-x: 2.2rem;
-$btn-primary--hover-background: #99c8ff;
-$btn-outline-primary--hover-background: #e6f2ff;
 $btn--rounded-border-radius: 2rem;
-$btn--with-i-color: #d7e9ff;
+$btn--with-i-color: rgba($white, 0.8);
+
+$btn-primary-color: $white;
+$btn-primary-hover-color: $white;
+$btn-primary--hover-background: $blue-600;
+$btn-outline-primary--hover-background: #e6f2ff;
+$btn-outline-primary-color: $primary;
+$btn-outline-primary-border-color: $primary;
+$btn-outline-primary-hover-color: $primary;

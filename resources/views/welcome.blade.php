@@ -65,6 +65,10 @@
             </div>
             <div class="col-lg-6">
 
+                <button class="btn btn-secondary mb-3">ENTER</button>
+                <button class="btn btn-outline-secondary mb-3">CONTINUE</button>
+                <button class="btn btn-secondary mb-3 small">CONTINUE</button>
+
                 <button class="btn btn-primary mb-3">ENTER</button>
                 <button class="btn btn-primary mb-3">CONTINUE</button>
                 <button class="btn btn-primary mb-3 small">CONTINUE</button>
@@ -331,6 +335,8 @@
             </div>
             <div class="col-lg-6 ">
                 <div style="height: 10rem"></div>
+
+
                 <div class="py-5 my-5">
                     <form action="/">
                         @include("modules.account-select.account-select", [
@@ -353,6 +359,30 @@
                                         "ajax"=>true,
                                         "url"=>"/",
                                         "method"=>"get",
+                                        "popup"=>[
+                                            "showCancelButton"=>true,
+                                            "confirmButtonText"=>"DELETE",
+                                            "cancelButtonText"=>"CANCEL",
+                                            "reverseButtons"=>true,
+                                            "html"=>'
+                                            <div>
+                    <h2 class="text-center text-black display-2_5">Delete account</h2>
+                    <p class="small text-left text-danger d-flex justify-content-center align-items-center lh--1_4 mb-4 py-2">
+                        <img class="img-fluid mr-2" style="height: 1rem; width: auto;" src="/img/bootstrap-theme-et/warning.svg" alt="warning">You did not save your LED
+                    </p>
+                    <p class="small text-left text-muted lh--1_4">
+                        Deleting an account will result in its loss if you did not save the secret phrase (SEED).
+                    </p>
+                    <p class="small text-left text-muted lh--1_4">
+                        Click the DELETE button to delete the account, or CANCEL to return to the previous screen.
+                    </p>
+                </div>
+                                            ',
+
+                                            "imageUrl"=>"/img/bootstrap-theme-et/warning.svg",
+                                            "imageHeight"=>70,
+                                            "imageAlt"=>"Delete account",
+                                        ],
                                         "data"=>[
                                             "account_id"=>1
                                         ],
@@ -381,7 +411,46 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-auto col-lg-4 d-flex justify-content-center">
+                @include("modules.checkboxPhoto.checkboxPhoto",
+                [
+                    "name"=>"role_id",
+                    "text"=>"Join as a Client",
+                    "btnText"=>"Choose role (Click here)",
+                    "img"=>"/img/tiger.jpg",
+                    "widthLimitation"=>true
+                ]
+                )
+            </div>
+            <div class="col-auto col-lg-4 d-flex justify-content-center">
+                @include("modules.checkboxPhoto.checkboxPhoto",
+                [
+                    "name"=>"role_id",
+                    "text"=>"Join as a Client",
+                    "btnText"=>"Choose role (Click here)",
+                    "img"=>"/img/tiger.jpg",
+                    "checked"=>true,
+                    "widthLimitation"=>true
+                ]
+                )
+            </div>
+            <div class="col-auto col-lg-4 d-flex justify-content-center">
+                @include("modules.checkboxPhoto.checkboxPhoto",
+                [
+                    "name"=>"role_id",
+                    "text"=>"Join as a Client",
+                    "btnText"=>"Choose role (Click here)",
+                    "img"=>"/img/tiger.jpg",
+                    "widthLimitation"=>true
+                ]
+                )
+            </div>
+        </div>
     </div>
+    <i class="fab fa-earlybirds"></i>
+    <i class="fas fa-robot"></i>
+    <i class="fab fa-reddit-alien"></i>
     <div style="height: 50rem"></div>
 
 @stop

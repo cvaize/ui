@@ -14,7 +14,7 @@ $id_input = "input_".$random_int."_".str_slug($name);
     ]+($attributes ?? [])
     ) }}
 
-    <label class="form-check-label text-muted" for="{{$id_input}}">
+    <label class="form-check-label" for="{{$id_input}}">
         {!! $label ?? null  !!}
     </label>
 

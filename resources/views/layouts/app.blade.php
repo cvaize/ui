@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{mix("/css/all.css")}}">
     <link rel="stylesheet" href="{{mix("/css/bootstrap-theme-et.css")}}">
 </head>
-<body class="bg-light">
+<body>
 <?php
 $navbar = $navbar ?? true;
 ?>

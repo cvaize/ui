@@ -1,12 +1,12 @@
 
 
 .form-control-label {
-  font-size: $form-control-label-font-size;
+  font-size: #{$form-control__label--font-size/$html-font-size-var}rem;
 }
 .form-control {
-  font-size: $form-control-font-size;
-  padding: $form-control-padding;
-  height: $form-control-height;
+  font-size: #{$form-control--font-size/$html-font-size-var}rem;
+  padding: 0 #{$form-control--padding-x/$html-font-size-var}rem;
+  height: #{$form-control-height/$html-font-size-var}rem;
   background: $form-control-background;
   color: $form-control-color;
   font-weight: $form-control-font-weight;

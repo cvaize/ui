@@ -1,14 +1,17 @@
 
-(function ($, swal) {
+(function ($, swal, toastAlert) {
     let prefixClass = "module__";
     let jsPrefix = ".js-";
     let debug = true;
     if(debug && !swal){
         console.log("Подключите SweetAlert2");
     }
+    if(debug && !toastAlert){
+        console.log("Подключите SweetAlert2 ToastAlert");
+    }
     let swalWithBootstrapButtons = swal.mixin({
-        confirmButtonClass: 'btn btn-success ml-3',
-        cancelButtonClass: 'btn btn-danger mr-3',
+        confirmButtonClass: 'btn btn-success w-100 btn-lg ml-3',
+        cancelButtonClass: 'btn btn-danger w-100 btn-lg mr-3',
         buttonsStyling: false,
     });
     //Скрить - Покзать список
@@ -147,31 +150,43 @@
             let url = element.attr("data-url");
             let method = element.attr("data-method");
             let data = element.attr("data-data");
-            if(data.length>0){
+            let popup = element.attr("data-popup");
+            if(data && data.length>0){
                 data = JSON.parse(data);
+            }else{
+                data = {};
             }
-
-            swalWithBootstrapButtons({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!',
-                reverseButtons: true
-            }).then((result) => {
+            if(popup && popup.length>0){
+                popup = JSON.parse(popup);
+            }else{
+                popup = {
+                    title: 'Are you sure?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true,
+                };
+            }
+            popup["width"] = "35rem";
+            popup["padding"] = "3rem";
+            swalWithBootstrapButtons(popup).then(function(result) {
                 if (result.value) {
                     $.ajax(url, {
                         method: method,
                         data: data
                     }).then(function (data) {
-                        swalWithBootstrapButtons(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        )
-                    }).cache(function () {
-                        console.log("Error account-select delete");
+                        if(data && data.success && data.success.length > 1 && data.title && data.title.length > 1){
+                            toastAlert(data);
+                        }else{
+                            if(debug){
+                                toastAlert({
+                                    type: 'success',
+                                    title: 'Debug message'
+                                });
+                            }
+                        }
+
                     });
                 }
             });
@@ -182,4 +197,4 @@
 
     });
 
-})(jQuery, swal);
+})(jQuery, swal, toastAlert);

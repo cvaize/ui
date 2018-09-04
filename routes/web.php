@@ -22,3 +22,6 @@ Route::get('login', function () {
 Route::get('1_sign-in-main', function () {
     return view('screens.1_sign-in-main');
 });
+Route::get('2_choose_role', function () {
+    return view('screens.2_choose_role');
+});

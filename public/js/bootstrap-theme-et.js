@@ -83,6 +83,14 @@ module.exports = __webpack_require__(6);
 
 // require('selectric'); // http://selectric.js.org/
 
+
+window.toastAlert = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+
 __webpack_require__(2);
 
 __webpack_require__(3);
@@ -149,16 +157,19 @@ __webpack_require__(4);
 /***/ (function(module, exports) {
 
 
-(function ($, swal) {
+(function ($, swal, toastAlert) {
     var prefixClass = "module__";
     var jsPrefix = ".js-";
     var debug = true;
     if (debug && !swal) {
         console.log("Подключите SweetAlert2");
     }
+    if (debug && !toastAlert) {
+        console.log("Подключите SweetAlert2 ToastAlert");
+    }
     var swalWithBootstrapButtons = swal.mixin({
-        confirmButtonClass: 'btn btn-success ml-3',
-        cancelButtonClass: 'btn btn-danger mr-3',
+        confirmButtonClass: 'btn btn-success w-100 btn-lg ml-3',
+        cancelButtonClass: 'btn btn-danger w-100 btn-lg mr-3',
         buttonsStyling: false
     });
     //Скрить - Покзать список
@@ -277,34 +288,49 @@ __webpack_require__(4);
             var url = element.attr("data-url");
             var method = element.attr("data-method");
             var data = element.attr("data-data");
-            if (data.length > 0) {
+            var popup = element.attr("data-popup");
+            if (data && data.length > 0) {
                 data = JSON.parse(data);
+            } else {
+                data = {};
             }
-
-            swalWithBootstrapButtons({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!',
-                reverseButtons: true
-            }).then(function (result) {
+            if (popup && popup.length > 0) {
+                popup = JSON.parse(popup);
+            } else {
+                popup = {
+                    title: 'Are you sure?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                };
+            }
+            popup["width"] = "35rem";
+            popup["padding"] = "3rem";
+            swalWithBootstrapButtons(popup).then(function (result) {
                 if (result.value) {
                     $.ajax(url, {
                         method: method,
                         data: data
                     }).then(function (data) {
-                        swalWithBootstrapButtons('Deleted!', 'Your file has been deleted.', 'success');
-                    }).cache(function () {
-                        console.log("Error account-select delete");
+                        if (data && data.success && data.success.length > 1 && data.title && data.title.length > 1) {
+                            toastAlert(data);
+                        } else {
+                            if (debug) {
+                                toastAlert({
+                                    type: 'success',
+                                    title: 'Debug message'
+                                });
+                            }
+                        }
                     });
                 }
             });
             return;
         }
     });
-})(jQuery, swal);
+})(jQuery, swal, toastAlert);
 
 /***/ }),
 /* 5 */
