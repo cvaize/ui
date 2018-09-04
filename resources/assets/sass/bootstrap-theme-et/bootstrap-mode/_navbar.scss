@@ -7,9 +7,16 @@
 }
 .navbar-light{
   background: $navbar-light-background;
+  .text-muted{
+    color: $blue-300!important;
+  }
   .navbar-nav{
     .nav-link{
+      font-weight: 300;
       color: $navbar-light__nav-link-color;
+      i{
+        color: $yellow-500;
+      }
       &:hover, &:focus{
         color: $navbar-light__nav-link-color--hover;
       }
@@ -42,6 +49,7 @@
     display: none;
   }
   .navbar-nav{
+    align-items: center;
     .nav-item--thumbnail{
       //display: flex;
     }
@@ -64,7 +72,7 @@
   }
   &-expand-lg{
     .navbar__content-wrapper{
-      @media (max-width: 991.98px) {
+      @media #{$MaxW--md} {
         justify-content: space-between;
       }
     }

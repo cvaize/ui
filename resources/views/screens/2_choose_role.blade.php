@@ -9,10 +9,10 @@
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <div class="my-5">
                         <a href="#">
-                            <img height="100" src="/img/screens/1_sign-in-main/logo.png" alt="">
+                            <img height="100" src="/img/logo.jpg" alt="">
                         </a>
                     </div>
-                    <div class="my-5 text-center">
+                    <div class="my-3 text-center">
                         <h1>
                             Hello! Choose your role
                         </h1>
@@ -27,20 +27,23 @@
                                 @include("modules.checkboxIcon.checkboxIcon",
                                 [
                                     "name"=>"role_id",
-                                    "text"=>"Join as a Client",
+                                    "text"=>"Join as a <b>Client</b>",
                                     "btnText"=>"Choose role (Click here)",
-                                    "img"=>"/img/tiger.jpg",
+                                    "btnTextChecked"=>"Active role",
+                                    "icon"=>"fab fa-reddit-alien",
                                     "widthLimitation"=>true
                                 ]
                                 )
                             </div>
-                            <div class="col-auto col-lg-4 d-flex justify-content-center">
+                            <div class="col-auto col-lg-4 d-flex justify-content-center checkboxIcon__border-lines
+                            checkboxIcon__border-lines--md">
                                 @include("modules.checkboxIcon.checkboxIcon",
                                 [
                                     "name"=>"role_id",
-                                    "text"=>"Join as a Client",
+                                    "text"=>"Join as a <b>Client</b>",
                                     "btnText"=>"Choose role (Click here)",
-                                    "img"=>"/img/tiger.jpg",
+                                    "btnTextChecked"=>"Active role",
+                                    "icon"=>"fas fa-robot",
                                     "checked"=>true,
                                     "widthLimitation"=>true
                                 ]
@@ -50,9 +53,10 @@
                                 @include("modules.checkboxIcon.checkboxIcon",
                                 [
                                     "name"=>"role_id",
-                                    "text"=>"Join as a Client",
+                                    "text"=>"Join as a <b>Client</b>",
                                     "btnText"=>"Choose role (Click here)",
-                                    "img"=>"/img/tiger.jpg",
+                                    "btnTextChecked"=>"Active role",
+                                    "icon"=>"fab fa-earlybirds",
                                     "widthLimitation"=>true
                                 ]
                                 )

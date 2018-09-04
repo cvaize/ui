@@ -448,9 +448,6 @@
             </div>
         </div>
     </div>
-    <i class="fab fa-earlybirds"></i>
-    <i class="fas fa-robot"></i>
-    <i class="fab fa-reddit-alien"></i>
     <div style="height: 50rem"></div>
 
 @stop

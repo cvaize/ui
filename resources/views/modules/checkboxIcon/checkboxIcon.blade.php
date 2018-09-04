@@ -19,8 +19,8 @@ $id_input = "input_".$random_int."_".str_slug($name);
            for="{{$id_input}}">
 
         <div class="checkboxIcon__wrapper-avatar {{ $wrapperAvatarClass ?? null }}">
-            <div class="checkboxIcon__avatar {{ $avatarClass ?? null }}" style="background-image: url({{$img??null}});">
-
+            <div class="checkboxIcon__avatar {{ $avatarClass ?? null }}">
+                <i class="{{$icon ?? "fab fa-earlybirds"}}"></i>
             </div>
         </div>
         @isset($text)
@@ -30,9 +30,10 @@ $id_input = "input_".$random_int."_".str_slug($name);
         @endisset
         <div class="checkboxIcon__button">
             <div class="checkboxIcon__button__box--no-checked">
-                {!!  $btnText ?? null  !!}</div>
+                {!!  $btnText ?? null  !!}
+            </div>
             <div class="checkboxIcon__button__box--checked">
-                <i class="fas fa-check"></i>
+                {!!  $btnTextChecked ?? null  !!}
             </div>
         </div>
     </label>

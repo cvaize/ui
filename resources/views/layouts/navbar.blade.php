@@ -3,7 +3,7 @@
 
         <div class="navbar__content-wrapper">
             <a class="navbar-brand pb-2" href="#">
-                <img src="./img/screens/navbar/ET-Logo--700.svg" alt="logo">
+                <img src="./img/logo.jpg" alt="logo">
             </a>
 
             <div class="collapse navbar-collapse navbar__collapse--lg">
@@ -11,27 +11,33 @@
                     <li class="nav-item">
                         <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
-                            <span class="ml-1 link__hover-element link__hover-element--underline font-weight-normal">ASSERTS BALANCE:</span>
+                            <span class="link__hover-element font-weight-normal">Assets balance:</span>
                             <br>
-                            <span class="ml-3 pl-3">35k$ (~ 6BTC)</span>
+                            <span class="text-muted">USD</span> <span>35 000</span> <span class="text-muted">(~6 BTC)</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
-                            <span class="ml-1 link__hover-element link__hover-element--underline font-weight-normal">ET-TOKEN BALANCE:</span>
+                            <span class="link__hover-element font-weight-normal">Assets balance:</span>
                             <br>
-                            <span class="ml-3 pl-3">250I EET (~6 k$)</span>
+                            <span class="text-muted">USD</span> <span>35 000</span> <span class="text-muted">(~6 BTC)</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
-                            <span class="ml-1">3500 EOS (16 645$)</span>
+                            <span class="link__hover-element font-weight-normal">Assets balance:</span>
                             <br>
+                            <span class="text-muted">USD</span> <span>35 000</span> <span class="text-muted">(~6 BTC)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
-                            <span class="ml-1 link__hover-element link__hover-element--underline font-weight-normal">ACTIVE PURPOSES:</span>
-                            2
+                            <span class="link__hover-element font-weight-normal">
+                                Assets balance: <span class="font-weight-bold">2</span>
+                            </span>
                         </a>
                     </li>
                     <li class="nav-item nav-item--thumbnail">
@@ -49,7 +55,7 @@
                                     <a class="dropdown-item" href="#"><i class="fas fa-chart-line mr-2"></i>Active Trust</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-history mr-2"></i>History of
                                         Trust <span
-                                                class="ml-auto"><span
+                                                class="ml-auto d-none"><span
                                                     class="dropdown-item--counter ml-2">99</span></span></a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Sing
                                         Out</a>
@@ -61,7 +67,7 @@
                                     <div class="small">Role: Client, Age 39</div>
                                     <div class="small">Singapore</div>
                                 </div>
-                                <div class="col d-flex align-items-center justify-content-end">
+                                <div class="d-none col d-flex2 align-items-center justify-content-end">
                                     <a class="nav-link nav-link--bell" href="#">
                                         <i class="fas fa-bell"></i>
                                     </a>

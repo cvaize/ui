@@ -8,17 +8,18 @@
     .caret{
       display: inline-block;
       position: absolute;
-      bottom: 0;
-      right: 0;
-      $caret21313: 1.07rem;
-      width: $caret21313;
-      height: $caret21313;
-      line-height: $caret21313;
+      bottom: .5rem;
+      right: .5rem;
+      color: $yellow-500;
+      $caret-width: #{15/$html-font-size-var}rem;
+      width: $caret-width;
+      height: $caret-width;
+      line-height: $caret-width;
       background: #fff;
       border-radius: 50%;
       vertical-align: middle;
       text-align: center;
-
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.13);
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       -moz-osx-font-smoothing: grayscale;
@@ -67,32 +68,32 @@
     box-shadow:  0px 0px 20px 0px rgba(#000000,0.2);
     border-color: transparent;
     .dropdown-item{
-      color: #5A5A5A;
+      color: $blue-900;
       font-size: 0.92rem;
       display: flex;
       align-items: center;
       background-color: #ffffff;
       i{
-        color: #5A5A5A;
+        color: $gray-400;
       }
       &:hover{
-        color: #5A5A5A;
-        background-color: #C4C4C4;
+        color: $blue-600;
+        background-color: $blue-100;
         i{
-          color: #5A5A5A;
+          color: $yellow-500;
         }
       }
       &--counter{
         margin-left: auto;
         border: 2px solid rgba(0, 0, 0, 0.13);
-        color: #000000;
+        color: $blue-900;
         border-radius: 50%;
         font-size: .78rem;
-        $wh12313: 1.5rem;
-        min-width: $wh12313;
-        min-height: $wh12313;
-        width: $wh12313;
-        height: $wh12313;
+        $caret--counter-width: #{21/$html-font-size-var}rem;
+        min-width: $caret--counter-width;
+        min-height: $caret--counter-width;
+        width: $caret--counter-width;
+        height: $caret--counter-width;
         font-weight: normal;
         display: flex;
         align-items: center;
@@ -101,9 +102,3 @@
     }
   }
 }
-
-/* caret style */
-.caret {
-  position: relative;
-}
-
