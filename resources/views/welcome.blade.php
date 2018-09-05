@@ -210,19 +210,19 @@
                 <br>
                 <br>
 
-                <button class="btn btn-secondary btn-circle mb-3 middle">
+                <button class="btn btn-social btn-circle mb-3 middle">
                     <i class="fab fa-telegram-plane"></i>
                 </button>
 
-                <button class="btn btn-secondary btn-circle mb-3 middle">
+                <button class="btn btn-social btn-circle mb-3 middle">
                     <i class="fab fa-facebook-f"></i>
                 </button>
 
-                <button class="btn btn-secondary btn-circle mb-3 middle">
+                <button class="btn btn-social btn-circle mb-3 middle">
                     <i class="fab fa-twitter"></i>
                 </button>
 
-                <button class="btn btn-secondary btn-circle mb-3 middle">
+                <button class="btn btn-social btn-circle mb-3 middle">
                     <i class="fab fa-linkedin-in"></i>
 
                 </button>

@@ -48,6 +48,16 @@
     border-color: $primary;
   }
 }
+.btn-social {
+  color: $gray-500;
+  @include gradient-bg(rgba($blue-900, 0.1));
+  border-color: transparent;
+  @include hover {
+    color: $blue-600;
+    @include gradient-bg(rgba($blue-600, 0.1));
+    border-color: transparent;
+  }
+}
 .btn-outline-secondary {
   color: $primary;
   @include gradient-bg($white);
@@ -103,6 +113,7 @@
   }
   &.middle{
     width: 2.36rem;
+    max-height: 2.36rem;
     padding: 0;
     border-radius: 50%;
     text-align: center;
@@ -113,4 +124,16 @@
       line-height: 1;
     }
   }
+}
+.btn-tooltip{
+  background: rgba($blue-600, 0.2);
+  padding: 0 .5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  max-height: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  color: $blue-600;
+  border-radius: 1rem;
 }

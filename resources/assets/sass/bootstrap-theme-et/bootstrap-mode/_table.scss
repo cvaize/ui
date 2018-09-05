@@ -1,0 +1,8 @@
+.table{
+  line-height: 1.4;
+  &__row{
+    &:nth-child(even){
+      background: rgba($blue-200, 0.5);
+    }
+  }
+}

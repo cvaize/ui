@@ -1630,17 +1630,35 @@
   font-family: "Lato", "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.bootstrap-theme-et footer,
+.bootstrap-theme-et .footer {
+  background: #F1F2F5;
+}
+
+.bootstrap-theme-et .footer__line-copyright {
+  background: #E9EAED;
+}
+
 .bootstrap-theme-et small,
 .bootstrap-theme-et .small {
   font-size: 90%;
 }
 
 .bootstrap-theme-et .text-gray {
-  color: #404040;
+  color: #404040 !important;
 }
 
 .bootstrap-theme-et .text-muted {
-  color: #97A4AF;
+  color: #97A4AF !important;
+}
+
+.bootstrap-theme-et .text-info {
+  color: rgba(57, 81, 128, 0.7) !important;
+}
+
+.bootstrap-theme-et .text-info:hover,
+.bootstrap-theme-et .text-info:focus {
+  color: rgba(57, 81, 128, 0.7) !important;
 }
 
 .bootstrap-theme-et .lh--1 {
@@ -1690,6 +1708,10 @@
   color: #000;
 }
 
+.bootstrap-theme-et .text-success {
+  color: #28B646;
+}
+
 .bootstrap-theme-et h1,
 .bootstrap-theme-et .h1 {
   font-size: 3rem;
@@ -1731,7 +1753,7 @@
 }
 
 .bootstrap-theme-et .bg-light {
-  background-color: #f0f0f0 !important;
+  background-color: #F8F9FC !important;
 }
 
 .bootstrap-theme-et .dropdown--thumbnail .dropdown-toggle {
@@ -1926,6 +1948,20 @@
   border-color: #3893FF;
 }
 
+.bootstrap-theme-et .btn-social {
+  color: #97A4AF;
+  background: rgba(57, 81, 128, 0.1) -webkit-gradient(linear, left top, left bottom, from(rgba(210, 215, 226, 0.235)), to(rgba(57, 81, 128, 0.1))) repeat-x;
+  background: rgba(57, 81, 128, 0.1) linear-gradient(180deg, rgba(210, 215, 226, 0.235), rgba(57, 81, 128, 0.1)) repeat-x;
+  border-color: transparent;
+}
+
+.bootstrap-theme-et .btn-social:hover {
+  color: #3893FF;
+  background: rgba(56, 147, 255, 0.1) -webkit-gradient(linear, left top, left bottom, from(rgba(209, 230, 255, 0.235)), to(rgba(56, 147, 255, 0.1))) repeat-x;
+  background: rgba(56, 147, 255, 0.1) linear-gradient(180deg, rgba(209, 230, 255, 0.235), rgba(56, 147, 255, 0.1)) repeat-x;
+  border-color: transparent;
+}
+
 .bootstrap-theme-et .btn-outline-secondary {
   color: #3893FF;
   background: #ffffff -webkit-gradient(linear, left top, left bottom, from(white), to(#ffffff)) repeat-x;
@@ -1992,6 +2028,7 @@
 
 .bootstrap-theme-et .btn-circle.middle {
   width: 2.36rem;
+  max-height: 2.36rem;
   padding: 0;
   border-radius: 50%;
   text-align: center;
@@ -2002,6 +2039,19 @@
 .bootstrap-theme-et .btn-circle.middle i {
   font-size: 1.1rem;
   line-height: 1;
+}
+
+.bootstrap-theme-et .btn-tooltip {
+  background: rgba(56, 147, 255, 0.2);
+  padding: 0 .5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  max-height: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  color: #3893FF;
+  border-radius: 1rem;
 }
 
 .bootstrap-theme-et .tag {
@@ -2020,7 +2070,7 @@
 }
 
 .bootstrap-theme-et .tag--success {
-  color: #22b557;
+  color: #28B646;
   background: #d8ffe3;
 }
 
@@ -2244,6 +2294,15 @@
 
 .bootstrap-theme-et .form-group--outline .form-control.is-invalid {
   border-color: #F93A45;
+}
+
+.bootstrap-theme-et .form-control-label {
+  margin-bottom: .3rem;
+}
+
+.bootstrap-theme-et .form-control-label i {
+  font-size: 1rem;
+  color: #B9CAEC;
 }
 
 .bootstrap-theme-et .form-control-label ~ .form-text {
@@ -2689,6 +2748,14 @@
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+}
+
+.bootstrap-theme-et .table {
+  line-height: 1.4;
+}
+
+.bootstrap-theme-et .table__row:nth-child(even) {
+  background: rgba(231, 242, 255, 0.5);
 }
 
 .bootstrap-theme-et .selectric {

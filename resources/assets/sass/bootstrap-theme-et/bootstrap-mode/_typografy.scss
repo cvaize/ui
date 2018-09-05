@@ -11,14 +11,26 @@ body{
   line-height: $line-height-base;
   font-family: $body-family;
 }
+footer, .footer{
+  background: $gray-100;
+}
+.footer__line-copyright{
+  background: $gray-200;
+}
 small, .small{
   font-size: $small-font-size;
 }
 .text-gray{
-  color: $gray-800;
+  color: $gray-800!important;
 }
 .text-muted{
-  color: $gray-500;
+  color: $gray-500!important;
+}
+.text-info{
+  color: rgba($blue-900, 0.7)!important;
+  &:hover, &:focus{
+    color: rgba($blue-900, 0.7)!important;
+  }
 }
 .lh--1{
   line-height: 1;
@@ -58,6 +70,9 @@ a{
 }
 .text-black{
   color: $black;
+}
+.text-success{
+  color: $green-500;
 }
 h1, .h1{
   font-size: 3rem;

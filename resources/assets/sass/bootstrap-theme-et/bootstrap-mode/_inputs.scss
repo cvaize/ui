@@ -97,6 +97,13 @@
     border-color: $form-feedback-invalid-color;
   }
 }
+.form-control-label{
+  margin-bottom: .3rem;
+  i{
+    font-size: 1rem;
+    color: #B9CAEC;
+  }
+}
 .form-control-label~.form-text{
   margin-top: -0.3rem;
 }
