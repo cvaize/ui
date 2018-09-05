@@ -1,9 +1,10 @@
-<div class="navbar__wrapper js-navbar-collapse">
+<div class="navbar__wrapper navbar__wrapper-lg js-navbar-collapse">
     <nav class="navbar navbar-expand-lg navbar-light">
 
         <div class="navbar__content-wrapper">
             <a class="navbar-brand pb-2" href="#">
-                <img src="./img/logo.jpg" alt="logo">
+                <img class="d-none d-xl-inline" src="/img/logo.jpg" alt="logo">
+                <img class="d-inline d-xl-none" src="/img/logotype-white.png" alt="logo">
             </a>
 
             <div class="collapse navbar-collapse navbar__collapse--lg">
@@ -75,6 +76,47 @@
                             </div>
                         </div>
                     </li>
+
+                    <li class="nav-item d-block d-xl-none">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <span class="link__hover-element">
+                                Dynasty Support Trust
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item d-block d-xl-none">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <span class="link__hover-element">
+                            Charity trust
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item d-block d-xl-none">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <span class="link__hover-element">
+                            Life Extension Trust
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item d-block d-xl-none">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <span class="link__hover-element">
+                            Retirement Trust
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item d-block d-xl-none">
+                        <a class="nav-link link--with-icon-hover" href="#">
+                            <span class="link__hover-element">
+                            Custom
+                            </span>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
 
@@ -87,6 +129,38 @@
         </div>
 
     </nav>
-    <div class="navbar-offset navbar-offset-lg"></div>
+    <div class="navbar__submenu__container">
+        <div class="navbar__submenu">
+            <div class="navbar__subitem">
+                <a class="navbar__link" href="#">
+                    Dynasty Support Trust
+                </a>
+            </div>
+            <div class="navbar__subitem--line"></div>
+            <div class="navbar__subitem">
+                <a class="navbar__link" href="#">
+                    Charity trust
+                </a>
+            </div>
+            <div class="navbar__subitem--line"></div>
+            <div class="navbar__subitem">
+                <a class="navbar__link" href="#">
+                    Life Extension Trust
+                </a>
+            </div>
+            <div class="navbar__subitem--line"></div>
+            <div class="navbar__subitem">
+                <a class="navbar__link" href="#">
+                    Retirement Trust
+                </a>
+            </div>
+            <div class="navbar__subitem--line"></div>
+            <div class="navbar__subitem">
+                <a class="navbar__link" href="#">
+                    Custom
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="navbar-background js-navbar-background"></div>
 </div>

@@ -11,13 +11,17 @@
   color: $form-control-color;
   font-weight: $form-control-font-weight;
   border-color: $form-control-border-color;
+  transition: all .1s ease;
   &:focus{
     outline: none;
     box-shadow: none;
+    color: $input-focus-color;
+    border-color: $input-focus-border-color;
+    background: $input-focus-background;
     &~.input-group-append .input-group-text{
-      background-color: $input-group-append__input-group-text-background-color;
-      border-color: $input-group-append__input-group-text-border-color;
-      color: $input-group-append__input-group-text-color;
+      background-color: $input-focus-background;
+      border-color: $input-focus-border-color;
+      color: $input-focus-color;
     }
   }
   &.is-invalid:focus{
@@ -29,19 +33,19 @@
 }
 .input-group{
   .input-group-text{
+    background: $form-control-background;
+    border-color: $form-control-border-color;
     font-size: $input-group__input-group-text-font-size;
     padding: $input-group__input-group-text-padding;
-    color: $input-group__input-group-text-color;
+    color: $form-control-color;
     font-weight: $input-group__input-group-text-font-weight;
-    transition: $input-group__input-group-text-font-transition;
   }
 }
 .input-group.active{
   .input-group-text{
-    background-color: $input-group__input-group--active-text-background-color;
-    border-color: $input-group__input-group--active-text-border-color;
-    color: $input-group__input-group--active-text-color;
-    transition: $input-group__input-group--active-text-transition;
+    background-color: $input-focus-background;
+    border-color: $input-focus-border-color;
+    color: $input-focus-color;
     &.is-invalid{
       border-color: $form-feedback-invalid-color;
     }

@@ -2151,22 +2151,27 @@
   font-size: 1rem;
   padding: 0 1.71428571rem;
   height: 3.21428571rem;
-  background: #ffffff;
-  color: #000;
+  background: #F8F9FC;
+  color: #9CA8BF;
   font-weight: 300;
-  border-color: #D9D9D9;
+  border-color: rgba(57, 81, 128, 0.1);
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
 
 .bootstrap-theme-et .form-control:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+  color: #395180;
+  border-color: #3893FF;
+  background: #ffffff;
 }
 
 .bootstrap-theme-et .form-control:focus ~ .input-group-append .input-group-text {
   background-color: #ffffff;
-  border-color: #b9caef;
-  color: #b9caef;
+  border-color: #3893FF;
+  color: #395180;
 }
 
 .bootstrap-theme-et .form-control.is-invalid:focus {
@@ -2179,20 +2184,18 @@
 }
 
 .bootstrap-theme-et .input-group .input-group-text {
+  background: #F8F9FC;
+  border-color: rgba(57, 81, 128, 0.1);
   font-size: 1rem;
   padding: 0.2rem 1.4rem;
-  color: #97a4b0;
+  color: #9CA8BF;
   font-weight: 300;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
 }
 
 .bootstrap-theme-et .input-group.active .input-group-text {
   background-color: #ffffff;
   border-color: #3893FF;
-  color: #b9caef;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  color: #395180;
 }
 
 .bootstrap-theme-et .input-group.active .input-group-text.is-invalid {
@@ -2287,19 +2290,82 @@
   min-height: 7.14rem;
   width: 100%;
   padding: 0;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 100000;
 }
 
-.bootstrap-theme-et .navbar-offset {
-  padding-top: 7.14rem;
+.bootstrap-theme-et .navbar__submenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (max-width: 1199.98px) {
-  .bootstrap-theme-et .navbar-offset-lg {
-    padding-top: 4.5rem;
-  }
+.bootstrap-theme-et .navbar__submenu__container {
+  background: #3893FF;
+}
+
+.bootstrap-theme-et .navbar__subitem {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bootstrap-theme-et .navbar__subitem--line {
+  height: 1.14285714rem;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bootstrap-theme-et .navbar__subitem:first-child {
+  margin-left: 0;
+}
+
+.bootstrap-theme-et .navbar__subitem:first-child .navbar__link {
+  padding-left: 0;
+}
+
+.bootstrap-theme-et .navbar__subitem:last-child {
+  margin-right: 0;
+}
+
+.bootstrap-theme-et .navbar__subitem:last-child .navbar__link {
+  padding-right: 0;
+}
+
+.bootstrap-theme-et .navbar__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 1.14285714rem;
+  padding: .2rem .5rem;
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.bootstrap-theme-et .navbar__link:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .bootstrap-theme-et .navbar__hamburger {
@@ -2361,10 +2427,17 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 1.5rem;
-  max-width: 1440px;
+  max-width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 1199.98px) {
+  .bootstrap-theme-et .navbar__wrapper-lg {
+    padding-top: 4.5rem;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -2384,7 +2457,9 @@
 
 @media (max-width: 1199.98px) {
   .bootstrap-theme-et .navbar-expand-lg {
+    position: fixed;
     min-height: 4.5rem;
+    background: #3893FF;
     /*
      * Arrow
      */
@@ -2448,7 +2523,7 @@
   .bootstrap-theme-et .navbar-expand-lg .hamburger-inner::after {
     width: 39px;
     height: 3px;
-    background-color: #000;
+    background-color: #ffffff;
     border-radius: 4px;
     position: absolute;
     -webkit-transition-property: -webkit-transform;
@@ -2483,6 +2558,10 @@
   .bootstrap-theme-et .navbar-expand-lg .hamburger--arrow.is-active .hamburger-inner::after {
     -webkit-transform: translate3d(-9px, 1px, 0) rotate(45deg) scale(0.7, 1);
             transform: translate3d(-9px, 1px, 0) rotate(45deg) scale(0.7, 1);
+  }
+
+  .bootstrap-theme-et .navbar-expand-lg ~ .navbar__submenu__container {
+    display: none;
   }
 }
 
