@@ -8,7 +8,7 @@
 
             <div class="collapse navbar-collapse navbar__collapse--lg">
                 <ul class="navbar-nav mr-auto font-weight-bold w-100">
-                    <li class="nav-item">
+                    <li class="nav-item nav-item--line">
                         <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
                             <span class="link__hover-element font-weight-normal">Assets balance:</span>
@@ -16,7 +16,7 @@
                             <span class="text-muted">USD</span> <span>35 000</span> <span class="text-muted">(~6 BTC)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav-item--line">
                         <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
                             <span class="link__hover-element font-weight-normal">Assets balance:</span>
@@ -24,7 +24,7 @@
                             <span class="text-muted">USD</span> <span>35 000</span> <span class="text-muted">(~6 BTC)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav-item--line">
                         <a class="nav-link link--with-icon-hover" href="#">
                             <i class="fas fa-wallet mr-2"></i>
                             <span class="link__hover-element font-weight-normal">Assets balance:</span>
@@ -64,8 +64,8 @@
                             <div class="row h-100 flex-grow-1 flex-nowrap">
                                 <div class="pl-4 ml-1 col-auto d-flex flex-column justify-content-center lh--1_4">
                                     <div class="text-truncate">Kirill Silvestrov</div>
-                                    <div class="small">Role: Client, Age 39</div>
-                                    <div class="small">Singapore</div>
+                                    <div class="small text-muted font-weight-light">Role: Client, Age 39</div>
+                                    <div class="small text-muted font-weight-light">Singapore</div>
                                 </div>
                                 <div class="d-none col d-flex2 align-items-center justify-content-end">
                                     <a class="nav-link nav-link--bell" href="#">
