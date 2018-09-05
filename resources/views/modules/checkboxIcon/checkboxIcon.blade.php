@@ -20,6 +20,7 @@ $id_input = "input_".$random_int."_".str_slug($name);
 
         <div class="checkboxIcon__wrapper-avatar {{ $wrapperAvatarClass ?? null }}">
             <div class="checkboxIcon__avatar {{ $avatarClass ?? null }}">
+                <i class="far fa-check-circle checkboxIcon__avatar__select"></i>
                 <i class="{{$icon ?? "fab fa-earlybirds"}}"></i>
             </div>
         </div>

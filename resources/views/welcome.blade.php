@@ -290,20 +290,7 @@
                 ])
                 @include("forms._select", [
                     "name"=>"select",
-                    "class"=>"selectric--simple",
-                    "label"=>"Select",
-                    "list"=>[
-                        1=>"Role 1",
-                        2=>"Role 2",
-                        3=>"Role 3",
-                        4=>"Role 4",
-                        5=>"Role 5",
-                    ]
-                ])
-                @include("forms._select", [
-                    "name"=>"select",
-                    "class"=>"",
-                    "label"=>"Select",
+                    "formClass"=>"selectric--border",
                     "list"=>[
                         1=>"Role 1",
                         2=>"Role 2",
@@ -311,13 +298,29 @@
                         4=>"Role 4",
                         5=>"Role 5",
                     ],
-                    "icon"=>'<i class="fas fa-user-clock"></i>',
-
+                    "icon"=>'<i class="fas fa-user-clock selectric__icon"></i>'
+                    /**
+                    Если иконка не задана тегом i
+                    то присвойте родительскому тегу класс "selectric__icon"
+                    **/
                 ])
                 <div class="bg-light p-5">
                     @include("forms._select", [
                         "name"=>"select",
-                        "formClass"=>"selectric--no-border",
+                        "class"=>"selectric--simple",
+                        "label"=>"Select",
+                        "list"=>[
+                            1=>"Role 1",
+                            2=>"Role 2",
+                            3=>"Role 3",
+                            4=>"Role 4",
+                            5=>"Role 5",
+                        ]
+                    ])
+                    @include("forms._select", [
+                        "name"=>"select",
+                        "class"=>"",
+                        "label"=>"Select",
                         "list"=>[
                             1=>"Role 1",
                             2=>"Role 2",
@@ -325,11 +328,8 @@
                             4=>"Role 4",
                             5=>"Role 5",
                         ],
-                        "icon"=>'<i class="fas fa-user-clock selectric__icon"></i>'
-                        /**
-                        Если иконка не задана тегом i
-                        то присвойте родительскому тегу класс "selectric__icon"
-                        **/
+                        "icon"=>'<i class="fas fa-user-clock"></i>',
+
                     ])
                 </div>
             </div>
@@ -445,6 +445,48 @@
                     "widthLimitation"=>true
                 ]
                 )
+            </div>
+        </div>
+        <div class="my-5 text-center w-100">
+            <div class="row justify-content-center">
+                <div class="col-auto col-lg-4 d-flex justify-content-center">
+                    @include("modules.checkboxIcon.checkboxIcon",
+                    [
+                        "name"=>"role_id",
+                        "text"=>"Join as a <b>Client</b>",
+                        "btnText"=>"Choose role (Click here)",
+                        "btnTextChecked"=>"Active role",
+                        "icon"=>"fab fa-reddit-alien",
+                        "widthLimitation"=>true
+                    ]
+                    )
+                </div>
+                <div class="col-auto col-lg-4 d-flex justify-content-center checkboxIcon__border-lines
+                            checkboxIcon__border-lines--md">
+                    @include("modules.checkboxIcon.checkboxIcon",
+                    [
+                        "name"=>"role_id",
+                        "text"=>"Join as a <b>Client</b>",
+                        "btnText"=>"Choose role (Click here)",
+                        "btnTextChecked"=>"Active role",
+                        "icon"=>"fas fa-robot",
+                        "checked"=>true,
+                        "widthLimitation"=>true
+                    ]
+                    )
+                </div>
+                <div class="col-auto col-lg-4 d-flex justify-content-center">
+                    @include("modules.checkboxIcon.checkboxIcon",
+                    [
+                        "name"=>"role_id",
+                        "text"=>"Join as a <b>Client</b>",
+                        "btnText"=>"Choose role (Click here)",
+                        "btnTextChecked"=>"Active role",
+                        "icon"=>"fab fa-earlybirds",
+                        "widthLimitation"=>true
+                    ]
+                    )
+                </div>
             </div>
         </div>
     </div>

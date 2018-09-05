@@ -101,12 +101,24 @@
     border: 1px solid rgba($blue-600, 37%);
     font-size: 3rem;
     color: rgba($gray-500, .62);
+    &__select{
+      color: $success;
+      font-size: 1.5rem;
+      position: absolute;
+      background: white;
+      right: .1rem;
+      top: .1rem;
+      opacity: 0;
+    }
   }
   &:checked~.checkboxIcon__label{
     .checkboxIcon{
       &__avatar{
         color: $blue-600;
         background: rgba($blue-600, .03);
+        &__select{
+          opacity: 1;
+        }
       }
       &__button{
         &__box--checked{

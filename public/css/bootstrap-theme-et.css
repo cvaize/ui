@@ -2693,23 +2693,36 @@
 
 .bootstrap-theme-et .selectric {
   background: #ffffff;
+  -webkit-box-shadow: 3px 5px 10px rgba(56, 147, 255, 0.05);
+          box-shadow: 3px 5px 10px rgba(56, 147, 255, 0.05);
+  border-radius: 3px;
+  border: none;
 }
 
 .bootstrap-theme-et .selectric .button {
   background: #ffffff;
-  color: #f0f0f0;
+  color: rgba(56, 147, 255, 0.7);
   width: 3.58rem;
   height: 3.58rem;
   line-height: 3.58rem;
 }
 
 .bootstrap-theme-et .selectric .button:after {
-  border-top-color: #f0f0f0;
+  border-top-color: rgba(56, 147, 255, 0.7);
+}
+
+.bootstrap-theme-et .selectric-hover .selectric .button {
+  background: #ffffff;
+  color: rgba(56, 147, 255, 0.7);
+}
+
+.bootstrap-theme-et .selectric-hover .selectric .button:after {
+  border-top-color: rgba(56, 147, 255, 0.7);
 }
 
 .bootstrap-theme-et .selectric .label {
   font-size: 1rem;
-  color: #000000;
+  color: #395180;
   padding-left: .9rem;
   height: 3.58rem;
   line-height: 3.58rem;
@@ -2718,14 +2731,20 @@
 .bootstrap-theme-et .selectric .label i,
 .bootstrap-theme-et .selectric .label .selectric__icon {
   margin-right: .65rem;
-  color: #f0f0f0;
+  color: rgba(56, 147, 255, 0.7);
 }
 
-.bootstrap-theme-et .selectric--no-border .selectric,
-.bootstrap-theme-et .selectric--no-border .selectric-items {
-  border: none;
-  -webkit-box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+.bootstrap-theme-et .selectric--border .selectric {
+  border: 1px solid rgba(56, 147, 255, 0.7);
+}
+
+.bootstrap-theme-et .selectric--border .selectric,
+.bootstrap-theme-et .selectric--border .selectric-items {
+  border: 1px solid rgba(56, 147, 255, 0.7);
+}
+
+.bootstrap-theme-et .selectric-items {
+  border: 1px solid rgba(56, 147, 255, 0.7);
 }
 
 .bootstrap-theme-et .selectric-items li {
@@ -3204,9 +3223,23 @@
   color: rgba(151, 164, 175, 0.62);
 }
 
+.bootstrap-theme-et .checkboxIcon__avatar__select {
+  color: #52B968;
+  font-size: 1.5rem;
+  position: absolute;
+  background: white;
+  right: .1rem;
+  top: .1rem;
+  opacity: 0;
+}
+
 .bootstrap-theme-et .checkboxIcon:checked ~ .checkboxIcon__label .checkboxIcon__avatar {
   color: #3893FF;
   background: rgba(56, 147, 255, 0.03);
+}
+
+.bootstrap-theme-et .checkboxIcon:checked ~ .checkboxIcon__label .checkboxIcon__avatar__select {
+  opacity: 1;
 }
 
 .bootstrap-theme-et .checkboxIcon:checked ~ .checkboxIcon__label .checkboxIcon__button__box--checked {

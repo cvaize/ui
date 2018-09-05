@@ -1,35 +1,51 @@
 .selectric{
   background: $white;
-  //border: none;
+  box-shadow: 3px 5px 10px rgba($blue-600, 0.05);
+  border-radius: 3px;
+  border: none;
   .button {
     background: $white;
-    color: $color13;
+    color: rgba($blue-600, 0.7);
     width: 3.58rem;
     height: 3.58rem;
     line-height: 3.58rem;
     &:after{
-      border-top-color: $color13;
+      border-top-color: rgba($blue-600, 0.7);
+    }
+  }
+  &-hover{
+    .selectric{
+      .button {
+        background: $white;
+        color: rgba($blue-600, 0.7);
+        &:after{
+          border-top-color: rgba($blue-600, 0.7);
+        }
+      }
     }
   }
   .label{
     font-size: 1rem;
-    color: $color1;
+    color: $blue-900;
     padding-left: .9rem;
     height: 3.58rem;
     line-height: 3.58rem;
     i, .selectric__icon{
       margin-right: .65rem;
-      color: $color13;
+      color: rgba($blue-600, 0.7);
     }
   }
-  &--no-border{
+  &--border{
+    .selectric{
+      border: 1px solid rgba($blue-600, 0.7);
+    }
     .selectric, .selectric-items{
-      border: none;
-      box-shadow: 0 .5rem 1rem 0 rgba($color1,0.1);
+      border: 1px solid rgba($blue-600, 0.7);
     }
   }
 }
 .selectric-items{
+  border: 1px solid rgba($blue-600, 0.7);
   li{
     color: $color1;
     background: $white;
