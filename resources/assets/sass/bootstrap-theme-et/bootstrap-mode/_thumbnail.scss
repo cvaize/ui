@@ -1,0 +1,16 @@
+.thumbnail__wrapper{
+  $size-thumbnail__wrapper: 4.2rem;
+  flex-basis: $size-thumbnail__wrapper;
+  max-width: $size-thumbnail__wrapper;
+  min-width: $size-thumbnail__wrapper;
+  width: $size-thumbnail__wrapper;
+  height: $size-thumbnail__wrapper;
+  max-height: $size-thumbnail__wrapper;
+  min-height: $size-thumbnail__wrapper;
+  .img-thumbnail{
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

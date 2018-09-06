@@ -11,19 +11,22 @@ $hr--rounded-circle-size: 2.5rem;
     min-width: $hr--rounded-circle-size;
     min-height: $hr--rounded-circle-size;
     font-size: 1rem;
-    background: $color5;
+    line-height: $hr--rounded-circle-size;
+    vertical-align: middle;
+    background: $white;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: $color1;
+    color: $gray-500;
+    padding-bottom: .2rem;
   }
   &__hr{
     position: absolute;
     z-index: 1;
     height: 1px;
     width: 100%;
-    background: $color9;
+    background: $gray-500;
     top: 50%;
     left: 0;
   }

@@ -248,28 +248,60 @@
                     "name"=>"address",
                     "value"=>"",
                     "label"=>"Wallet address:",
-                    "placeholder"=>"Wallet address:"
+                    "placeholder"=>"Wallet address:",
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
                 ])
                 @include("forms._input", [
                     "type"=>"text",
                     "name"=>"address",
                     "value"=>"gsfuo7232370462462083hef723",
                     "label"=>"Wallet address:",
-                    "placeholder"=>"Wallet address:"
+                    "placeholder"=>"Wallet address:",
+                    "validator"=>[
+                        "uppercase"=>[
+                            "text"=>"uppercase",
+                            "show"=>true
+                        ],
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
                 ])
                 @include("forms._input", [
                     "type"=>"password",
                     "name"=>"password",
                     "value"=>"gsfuo7232370462462083hef723",
                     "label"=>"Password",
-                    "eye"=>true
+                    "eye"=>true,
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
                 ])
                 @include("forms._input", [
                     "type"=>"password",
                     "name"=>"password",
                     "value"=>"gsfuo7232370462462083hef723",
                     "label"=>"Password",
-                    "eye"=>false
+                    "eye"=>false,
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
                 ])
                 @include("forms._input", [
                     "type"=>"text",
@@ -278,6 +310,13 @@
                     "label"=>"Text",
                     "textPrepand"=>"USD",
                     "textAppend"=>"USD",
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
                 ])
                 @include("forms._input", [
                     "type"=>"number",
@@ -287,6 +326,13 @@
                     "label"=>"Text",
                     "textPrepand"=>"USD",
                     "textAppend"=>"USD",
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
                 ])
                 @include("forms._select", [
                     "name"=>"select",

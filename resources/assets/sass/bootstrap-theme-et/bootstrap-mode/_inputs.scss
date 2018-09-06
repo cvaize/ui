@@ -1,5 +1,3 @@
-
-
 .form-control-label {
   font-size: #{$form-control__label--font-size/$html-font-size-var}rem;
 }
@@ -41,16 +39,6 @@
     font-weight: $input-group__input-group-text-font-weight;
   }
 }
-.input-group.active{
-  .input-group-text{
-    background-color: $input-focus-background;
-    border-color: $input-focus-border-color;
-    color: $input-focus-color;
-    &.is-invalid{
-      border-color: $form-feedback-invalid-color;
-    }
-  }
-}
 
 
 
@@ -75,24 +63,6 @@
       }
     }
   }
-  .input-group.active{
-    .form-control{
-      background-color: $form-group--outline__input-group--active__form-control-background-color;
-      border-color: $form-group--outline__input-group--active__form-control-border-color;
-      color: $form-group--outline__input-group--active__form-control-color;
-      &.is-invalid{
-        border-color: $form-feedback-invalid-color;
-      }
-    }
-    .input-group-text{
-      background-color: $form-group--outline__input-group--active__input-group-text-background-color;
-      border-color: $form-group--outline__input-group--active__input-group-text-border-color;
-      color: $form-group--outline__input-group--active__input-group-text-color;
-      &.is-invalid{
-        border-color: $form-feedback-invalid-color;
-      }
-    }
-  }
   .form-control.is-invalid{
     border-color: $form-feedback-invalid-color;
   }
@@ -106,4 +76,88 @@
 }
 .form-control-label~.form-text{
   margin-top: -0.3rem;
+}
+.invalid-feedback{
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  &__rectangles{
+    display: inline-block;
+    margin-left: .25rem;
+    height: .357rem;
+    width: 1.07rem;
+    background: $gray-300;
+    &.active{
+      background: $red;
+    }
+  }
+  &__text{
+    padding-right: .5rem;
+  }
+}
+.form-group{
+  &.is-invalid{
+    .invalid-feedback{
+      display: flex;
+    }
+    .form-control{
+      border-color: $form-feedback-invalid-color;
+    }
+    .input-group-append .input-group-text{
+      border-color: $form-feedback-invalid-color;
+    }
+    .input-group-prepend .input-group-text{
+      border-color: $form-feedback-invalid-color;
+    }
+  }
+}
+
+.form-group.active{
+  .form-control{
+    outline: none;
+    box-shadow: none;
+    color: $input-focus-color!important;
+    border-color: $input-focus-border-color!important;
+    background: $input-focus-background!important;
+  }
+  .input-group-prepend .input-group-text{
+    background-color: $input-focus-background!important;
+    border-color: $input-focus-border-color!important;
+    color: $input-focus-color!important;
+  }
+  .input-group-append .input-group-text{
+    background-color: $input-focus-background!important;
+    border-color: $input-focus-border-color!important;
+    color: $input-focus-color!important;
+  }
+  .input-group{
+    .input-group-text{
+      background-color: $input-focus-background;
+      border-color: $input-focus-border-color;
+      color: $input-focus-color;
+      &.is-invalid{
+        border-color: $form-feedback-invalid-color;
+      }
+    }
+  }
+  &.form-group--outline{
+    .input-group{
+      .form-control{
+        background-color: $form-group--outline__input-group--active__form-control-background-color;
+        border-color: $form-group--outline__input-group--active__form-control-border-color;
+        color: $form-group--outline__input-group--active__form-control-color;
+        &.is-invalid{
+          border-color: $form-feedback-invalid-color;
+        }
+      }
+      .input-group-text{
+        background-color: $form-group--outline__input-group--active__input-group-text-background-color;
+        border-color: $form-group--outline__input-group--active__input-group-text-border-color;
+        color: $form-group--outline__input-group--active__input-group-text-color;
+        &.is-invalid{
+          border-color: $form-feedback-invalid-color;
+        }
+      }
+    }
+  }
 }

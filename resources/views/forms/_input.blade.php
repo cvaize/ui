@@ -4,7 +4,7 @@ $random_int = random_int(1, 100000);
 $id_input = "input_".$random_int."_".str_slug($name);
 ?>
 
-<div class="form-group {{ $classFormGroup ?? "" }} {{ ((isset($errors) && isset($name))?($errors->has($name) ? ' has-danger' : ''): null) }}">
+<div class="form-group js-form-group {{ $classFormGroup ?? "" }} {{ ((isset($errors) && isset($name))?($errors->has($name) ? ' has-danger' : ''): null) }}">
     @isset($label)
     <label class="form-control-label"
            for="{{$id_input}}"> {!!  $label !!} </label>
@@ -21,9 +21,10 @@ $id_input = "input_".$random_int."_".str_slug($name);
                 [
                 'required'=>(isset($required) ? 'required' : null),
                 'id'=>$id_input,
-                'class'=>'form-control form-control'
+                'class'=>'form-control '. (isset($validator)? " js-validator ":"")
                 .($errors->has($name) ? ' is-invalid ' : '')
                 .($class ?? ''),
+                'data-validator'=>(isset($validator)? json_encode($validator):null),
                 'placeholder'=>($placeholder ?? null),
                 'autocomplete'=>($autocomplete ?? 'on'),
                 'data-value'=>($value ?? null),
@@ -40,7 +41,7 @@ $id_input = "input_".$random_int."_".str_slug($name);
                 </div>
             </div>
         @elseif(isset($textPrepand) || isset($textAppend))
-            <div class="input-group js-input-group">
+            <div class="input-group">
                 @if(isset($textPrepand))
                 <div class="input-group-prepend">
                     <div class="input-group-text {{($errors->has($name) ? ' is-invalid ' : '')}}">
@@ -55,10 +56,11 @@ $id_input = "input_".$random_int."_".str_slug($name);
                 [
                 'required'=>(isset($required) ? 'required' : null),
                 'id'=>$id_input,
-                'class'=>'form-control js-input-group-focus form-control'
+                'class'=>'form-control form-control'. (isset($validator)? " js-validator ":"")
                 .($errors->has($name) ? ' is-invalid ' : '')
                 .($class ?? ''),
                 'placeholder'=>($placeholder ?? null),
+                'data-validator'=>(isset($validator)? json_encode($validator):null),
                 'autocomplete'=>($autocomplete ?? 'on'),
                 'data-value'=>($value ?? null),
                 ]+($attributes ?? [])
@@ -79,17 +81,30 @@ $id_input = "input_".$random_int."_".str_slug($name);
             [
             'required'=>(isset($required) ? 'required' : null),
             'id'=>$id_input,
-            'class'=>'form-control form-control '
+            'class'=>'form-control form-control '. (isset($validator)? " js-validator ":"")
             .($errors->has($name) ? ' is-invalid ' : '')
             .($class ?? ''),
             'placeholder'=>($placeholder ?? null),
+                'data-validator'=>(isset($validator)? json_encode($validator):null),
             'autocomplete'=>($autocomplete ?? 'on'),
             'data-value'=>($value ?? null),
             ]+($attributes ?? [])
             ) }}
         @endif
-        <div class="invalid-feedback">min 6 symbols</div>
-        @if(isset($feedback) || $errors->has($name) === true)
-    <div class="invalid-feedback">{{ $feedback ?? $errors->first($name) }}</div>
-        @endif
+
+        <div class="invalid-feedback js-invalid-feedback">
+            <span class="invalid-feedback__text js-invalid-feedback__text">
+                min 6 symbols
+                @if(isset($feedback) || $errors->has($name) === true)
+                    {{ $feedback ?? $errors->first($name) }}
+                @endif
+            </span>
+            @if(isset($validator))
+                @foreach($validator as $item)
+                    @if(isset($item["show"]) && $item["show"] === true)
+                        <div class="invalid-feedback__rectangles js-invalid-feedback__rectangles"></div>
+                    @endif
+                @endforeach
+            @endif
+        </div>
 </div>

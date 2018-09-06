@@ -1,5 +1,5 @@
 
-@extends('layouts.app', ["navbar"=>false])
+@extends('layouts.app', ["navbar"=>false, "footer"=>false])
 
 @section('content')
 
@@ -74,28 +74,53 @@
                             ]
                         ])
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-5">
                         @include("forms._input", [
-                                            "type"=>"password",
-                                            "name"=>"password",
-                                            "value"=>"gsfuo7232370462462083hef723",
-                                        ])
+                            "type"=>"password",
+                            "name"=>"password",
+                            "value"=>"gsfuo7232370462462083hef723",
+                            "label"=>"Password",
+                            "eye"=>true,
+                            "validator"=>[
+                                "min"=>[
+                                    "value"=>6,
+                                    "text"=>"min 6 symbols",
+                                    "show"=>true
+                                ],
+                                "uppercase"=>[
+                                    "text"=>"uppercase",
+                                    "show"=>true
+                                ],
+                                "lowercase"=>[
+                                    "text"=>"lowercase",
+                                    "show"=>true
+                                ],
+                                "digits"=>[
+                                    "text"=>"digits",
+                                    "show"=>true
+                                ],
+                                "spaces"=>[
+                                    "text"=>"spaces",
+                                    "show"=>false
+                                ],
+                            ]
+                        ])
                     </div>
                     <div class="mb-5">
-                        <button class="btn btn-success mb-3 btn-block btn-lg">ENTER</button>
+                        <button class="btn btn-primary mb-3 btn-block btn-lg">ENTER</button>
                     </div>
                     @include("modules.hr--rounded-circle.hr--rounded-circle", ["textHr"=>"or", "classHr"=>"my-5"])
                     <div class="my-5 d-flex align-items-center justify-content-center h3">
-                        <a class="d-block mx-3" href="#">
+                        <a class="btn btn-social btn-circle mx-3" href="#">
                             <i class="fab fa-telegram-plane"></i>
                         </a>
-                        <a class="d-block mx-3" href="#">
+                        <a class="btn btn-social btn-circle mx-3" href="#">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a class="d-block mx-3" href="#">
+                        <a class="btn btn-social btn-circle mx-3" href="#">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a class="d-block mx-3" href="#">
+                        <a class="btn btn-social btn-circle mx-3" href="#">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>

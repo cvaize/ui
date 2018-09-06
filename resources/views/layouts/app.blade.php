@@ -26,7 +26,12 @@ $navbar = $navbar ?? true;
 
 @yield('content')
 
+<?php
+$footer = $footer ?? true;
+?>
+@if($footer)
 @include("layouts.footer")
+@endif
 
 <script src="{{mix("/js/start.js")}}"></script>
 <script src="{{mix("/js/libs.js")}}"></script>

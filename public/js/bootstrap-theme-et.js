@@ -60,20 +60,40 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(1);
-__webpack_require__(5);
-module.exports = __webpack_require__(6);
+module.exports = {
+  error: {
+    length: 'Length should be a valid positive number',
+    password: 'Password should be a valid string'
+  },
+  regex: {
+    digits: /\d+/,
+    letters: /[a-zA-Z]+/,
+    uppercase: /[A-Z]+/,
+    lowercase: /[a-z]+/,
+    symbols: /[`~\!@#\$%\^\&\*\(\)\-_\=\+\[\{\}\]\\\|;:'",<.>\/\?€£¥₹]+/,
+    spaces: /[\s]+/
+  }
+};
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(2);
+__webpack_require__(9);
+module.exports = __webpack_require__(10);
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -83,7 +103,7 @@ module.exports = __webpack_require__(6);
 
 // require('selectric'); // http://selectric.js.org/
 
-__webpack_require__(13);
+__webpack_require__(3);
 //https://github.com/josephschmitt/Clamp.js
 $(".js-clamp-2-lines").each(function () {
     $clamp(this, { clamp: 2 });
@@ -107,19 +127,173 @@ window.toastAlert = swal.mixin({
     timer: 3000
 });
 
-__webpack_require__(2);
-
-__webpack_require__(3);
-
-//Modules
 __webpack_require__(4);
 
+__webpack_require__(7);
+
+//Modules
+__webpack_require__(8);
+
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
+/*!
+* Clamp.js 0.5.1
+*
+* Copyright 2011-2013, Joseph Schmitt http://joe.sh
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*/
+(function () {
+  window.$clamp = function (c, d) {
+    function s(a, b) {
+      n.getComputedStyle || (n.getComputedStyle = function (a, b) {
+        this.el = a;this.getPropertyValue = function (b) {
+          var c = /(\-([a-z]){1})/g;"float" == b && (b = "styleFloat");c.test(b) && (b = b.replace(c, function (a, b, c) {
+            return c.toUpperCase();
+          }));return a.currentStyle && a.currentStyle[b] ? a.currentStyle[b] : null;
+        };return this;
+      });return n.getComputedStyle(a, null).getPropertyValue(b);
+    }function t(a) {
+      a = a || c.clientHeight;var b = u(c);return Math.max(Math.floor(a / b), 0);
+    }function x(a) {
+      return u(c) * a;
+    }function u(a) {
+      var b = s(a, "line-height");"normal" == b && (b = 1.2 * parseInt(s(a, "font-size")));return parseInt(b);
+    }function l(a) {
+      if (a.lastChild.children && 0 < a.lastChild.children.length) return l(Array.prototype.slice.call(a.children).pop());if (a.lastChild && a.lastChild.nodeValue && "" != a.lastChild.nodeValue && a.lastChild.nodeValue != b.truncationChar) return a.lastChild;a.lastChild.parentNode.removeChild(a.lastChild);return l(c);
+    }function p(a, d) {
+      if (d) {
+        var e = a.nodeValue.replace(b.truncationChar, "");f || (h = 0 < k.length ? k.shift() : "", f = e.split(h));1 < f.length ? (q = f.pop(), r(a, f.join(h))) : f = null;m && (a.nodeValue = a.nodeValue.replace(b.truncationChar, ""), c.innerHTML = a.nodeValue + " " + m.innerHTML + b.truncationChar);if (f) {
+          if (c.clientHeight <= d) if (0 <= k.length && "" != h) r(a, f.join(h) + h + q), f = null;else return c.innerHTML;
+        } else "" == h && (r(a, ""), a = l(c), k = b.splitOnChars.slice(0), h = k[0], q = f = null);if (b.animate) setTimeout(function () {
+          p(a, d);
+        }, !0 === b.animate ? 10 : b.animate);else return p(a, d);
+      }
+    }function r(a, c) {
+      a.nodeValue = c + b.truncationChar;
+    }d = d || {};
+    var n = window,
+        b = { clamp: d.clamp || 2, useNativeClamp: "undefined" != typeof d.useNativeClamp ? d.useNativeClamp : !0, splitOnChars: d.splitOnChars || [".", "-", "\u2013", "\u2014", " "], animate: d.animate || !1, truncationChar: d.truncationChar || "\u2026", truncationHTML: d.truncationHTML },
+        e = c.style,
+        y = c.innerHTML,
+        z = "undefined" != typeof c.style.webkitLineClamp,
+        g = b.clamp,
+        v = g.indexOf && (-1 < g.indexOf("px") || -1 < g.indexOf("em")),
+        m;b.truncationHTML && (m = document.createElement("span"), m.innerHTML = b.truncationHTML);var k = b.splitOnChars.slice(0),
+        h = k[0],
+        f,
+        q;"auto" == g ? g = t() : v && (g = t(parseInt(g)));var w;z && b.useNativeClamp ? (e.overflow = "hidden", e.textOverflow = "ellipsis", e.webkitBoxOrient = "vertical", e.display = "-webkit-box", e.webkitLineClamp = g, v && (e.height = b.clamp + "px")) : (e = x(g), e <= c.clientHeight && (w = p(l(c), e)));return { original: y, clamped: w };
+  };
+})();
 
-(function ($) {
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//https://www.npmjs.com/package/password-validator
+var passwordValidator = __webpack_require__(5);
+
+(function ($, passwordValidator) {
+
+    var createValidation = function createValidation(th, data) {
+        // Create a schema
+        var schema = new passwordValidator();
+        if (data.min && data.min.value) {
+            schema = schema.is().min(data.min.value);
+        }
+        if (data.max && data.max.value) {
+            schema = schema.is().max(data.min.value);
+        }
+        if (data.uppercase) {
+            schema = schema.has().uppercase();
+        }
+        if (data.lowercase) {
+            schema = schema.has().lowercase();
+        }
+        if (data.digits) {
+            schema = schema.has().digits();
+        }
+        if (data.spaces) {
+            schema = schema.has().not().spaces();
+        }
+        var element = $(th);
+        var mark = function mark(list) {
+            var invalidFeedback = element.parents(".js-form-group").find(".js-invalid-feedback");
+            if (!invalidFeedback[0]) {
+                return;
+            }
+            var rectangles = invalidFeedback.find(".js-invalid-feedback__rectangles");
+            var dataShow = 0;
+            Object.keys(data).forEach(function (elem) {
+                if (data[elem].show) {
+                    dataShow += 1;
+                }
+            });
+            var clearedList = [];
+            list.forEach(function (elem, index) {
+                if (data[elem] && data[elem].show) {
+                    clearedList.push(elem);
+                }
+            });
+            dataShow -= clearedList.length;
+            rectangles.each(function () {
+                $(this).removeClass("active");
+            });
+            for (var i = 0; i < dataShow; i++) {
+                $(rectangles[i]).addClass("active");
+            }
+            if (clearedList[0] && data[clearedList[0]] && data[clearedList[0]].text) {
+                invalidFeedback.find(".js-invalid-feedback__text").html(data[clearedList[0]].text);
+            }
+            if (rectangles.length === dataShow) {
+                $(th).parents(".js-form-group").removeClass("is-invalid");
+            } else {
+                $(th).parents(".js-form-group").addClass("is-invalid");
+            }
+        };
+        element.on("input", function () {
+            var val = $(this).val();
+            mark(schema.validate(val, { list: true }));
+        });
+    };
+
+    $(".js-validator").each(function () {
+        var validatorData = $(this).attr("data-validator");
+        if (validatorData && validatorData.length > 4) {
+            validatorData = JSON.parse(validatorData);
+            createValidation(this, validatorData);
+        }
+    });
+
+    $(document).on("click", function (event) {
+        var target = $(event.target);
+
+        //Start - Присваиваем фокус на группу input
+        if (target.is(".js-form-group")) {
+            target.addClass("active");
+            $(".js-form-group").each(function () {
+                if (event.target !== this) {
+                    $(this).removeClass("active");
+                }
+            });
+        }
+        var formGroup = target.parents(".js-form-group");
+        if (formGroup.length > 0) {
+            formGroup.addClass("active");
+            $(".js-form-group").each(function () {
+                if (formGroup.get(0) !== this) {
+                    $(this).removeClass("active");
+                }
+            });
+        }
+        if (!target.is(".js-form-group") && formGroup.length === 0) {
+            $(".js-form-group.active").removeClass("active");
+        }
+        //End
+    });
+
     $(".js-form-control--checkbox-eye").on("change", function () {
         var input = $(this).attr("data-input");
         input = $(input);
@@ -131,24 +305,345 @@ __webpack_require__(4);
             input.attr("type", "password");
         }
     });
-    $('.js-input-group-focus').focus(function () {
-        var inputGroup = $(this).parents(".js-input-group");
-        inputGroup.addClass("active");
-    });
-    $('.js-input-group-focus').focusout(function () {
-        var inputGroup = $(this).parents(".js-input-group");
-        inputGroup.removeClass("active");
-    });
+
     $('.js-selectric').selectric({
         labelBuilder: function labelBuilder(currItem) {
             var icon = currItem.element.parents(".js-selectric").attr("data-icon");
             return (icon && icon.length > 4 ? icon : '') + currItem.text;
         }
     });
-})($);
+})($, passwordValidator);
 
 /***/ }),
-/* 3 */
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var lib = __webpack_require__(6);
+var error = __webpack_require__(0).error;
+
+/**
+ * Validates that a number is a valid length (positive number)
+ *
+ * @private
+ * @param {number} num - Number to validate
+ */
+function _validateLength(num) {
+  if (!num || typeof num !== 'number' || num < 0) {
+    throw new Error(error.length);
+  }
+}
+
+/**
+ * Tests a validation and return the result
+ *
+ * @private
+ * @param {string} property - Property to validate
+ * @return {boolean} Boolean value indicting the validity
+ *           of the password against the property
+ */
+function _isPasswordValidFor(property) {
+  return lib[property.method].apply(this, property.arguments);
+}
+
+/**
+ * Registers the properties of a password-validation schema object
+ *
+ * @private
+ * @param {string} func - Property name
+ * @param {array} args - arguments for the func property
+ */
+function _register(func, args) {
+  // Add property to the schema
+  this.properties.push({ method: func, arguments: args });
+  return this;
+}
+
+/**
+ * Creates a password-validator schema
+ *
+ * @constructor
+ */
+function PasswordValidator() {
+  // Initialize a schema with no properties defined
+  this.properties = [];
+}
+
+/**
+ * Method to validate the password against schema
+ *
+ * @param {string} pwd - password to valdiate
+ * @param {object} options - optional options to configure validation
+ * @param {boolean} [options.list] - asks for a list of validation
+ *           failures instead of just true/false
+ * @return {boolean|array} Boolean value indicting the validity
+ *           of the password as per schema, if 'options.list'
+ *           is not set. Otherwise, it returns an array of
+ *           property names which failed validations
+ */
+PasswordValidator.prototype.validate = function (pwd, options) {
+  // Checks if pwd is invalid
+  if (typeof pwd !== 'string') {
+    throw new Error(error.password);
+  }
+
+  // Sets password string
+  this.password = pwd;
+
+  // Sets that no inversion takes place by default
+  this.positive = true;
+
+  var _this = this;
+
+  if (options && options.list === true) {
+    return this.properties.reduce(function (errorList, property) {
+      // Applies all validations defined in lib one by one
+      if (!_isPasswordValidFor.call(_this, property)) {
+        // If the validation for a property fails,
+        // add it to the error list
+        return errorList.concat(property.method);
+      }
+      return errorList;
+    }, []);
+  }
+
+  // Returns the result of the validations
+  return this.properties.every(function (property) {
+    // Applies all validations defined in lib one by one
+    return _isPasswordValidFor.call(_this, property);
+  });
+};
+
+/**
+ * Rule to invert the next applied rules.
+ * All the rules applied after 'not' will have opposite effect,
+ * until 'has' rule is applied
+ */
+PasswordValidator.prototype.not = function not() {
+  return _register.call(this, 'not', arguments);
+};
+
+/**
+ * Rule to invert the effects of 'not'
+ * Apart from that, 'has' is also used
+ * to make the api readable and chainable
+ */
+PasswordValidator.prototype.has = function has() {
+  return _register.call(this, 'has', arguments);
+};
+
+/**
+ * Rule to invert the effects of 'not'
+ * Apart from that, 'is' is also used
+ * to make the api readable and chainable
+ */
+PasswordValidator.prototype.is = function is() {
+  return _register.call(this, 'is', arguments);
+};
+
+/**
+ * Rule to specify a minimum length of the password
+ *
+ * @param {number} num - minimum length
+ */
+PasswordValidator.prototype.min = function min(num) {
+  _validateLength(num);
+  return _register.call(this, 'min', arguments);
+};
+
+/**
+ * Rule to specify a maximum length of the password
+ *
+ * @param {number} num - maximum length
+ */
+PasswordValidator.prototype.max = function max(num) {
+  _validateLength(num);
+  return _register.call(this, 'max', arguments);
+};
+
+/**
+ * Rule to mendate the presense of digits in the password
+ */
+PasswordValidator.prototype.digits = function digits() {
+  return _register.call(this, 'digits', arguments);
+};
+
+/**
+ * Rule to mendate the presense of letters in the password
+ */
+PasswordValidator.prototype.letters = function letters() {
+  return _register.call(this, 'letters', arguments);
+};
+
+/**
+ * Rule to mendate the presense of uppercase letters in the password
+ */
+PasswordValidator.prototype.uppercase = function uppercase() {
+  return _register.call(this, 'uppercase', arguments);
+};
+
+/**
+ * Rule to mendate the presense of lowercase letters in the password
+ */
+PasswordValidator.prototype.lowercase = function lowercase() {
+  return _register.call(this, 'lowercase', arguments);
+};
+
+/**
+ * Rule to mendate the presense of symbols in the password
+ */
+PasswordValidator.prototype.symbols = function symbols() {
+  return _register.call(this, 'symbols', arguments);
+};
+
+/**
+ * Rule to mendate the presense of space in the password
+ * It can be used along with 'not' to not allow spaces
+ * in the password
+ */
+PasswordValidator.prototype.spaces = function spaces() {
+  return _register.call(this, 'spaces', arguments);
+};
+
+/**
+ * Rule to whitelist words to be used as password
+ *
+ * @param {array} list - list of values allowed
+ */
+PasswordValidator.prototype.oneOf = function oneOf() {
+  return _register.call(this, 'oneOf', arguments);
+};
+
+module.exports = PasswordValidator;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Generic method to test regex
+ *
+ * @private
+ * @param {string} regex - regex to test
+ *                           with password
+ */
+var regex = __webpack_require__(0).regex;
+
+function _process(regexp) {
+  return new RegExp(regexp).test(this.password) === this.positive;
+}
+
+module.exports = {
+
+  /**
+   * Method to invert the next validations
+   *
+   * @param {RegExp} [symbol] - custom Regex which should not be present
+   */
+  not: function not(symbol) {
+    this.positive = false;
+    if (symbol) {
+      return _process.call(this, symbol);
+    }
+    return true;
+  },
+
+  /**
+   * Method to invert the effects of not()
+   *
+   * @param {RegExp} [symbol] - custom Regex which should be present
+   */
+  has: function has(symbol) {
+    this.positive = true;
+    if (symbol) {
+      return _process.call(this, symbol);
+    }
+    return true;
+  },
+
+  /**
+   * Method to invert the effects of not() and
+   * to make the api readable and chainable
+   *
+   */
+  is: function is() {
+    this.positive = true;
+    return true;
+  },
+
+  /**
+   * Method to specify a minimum length
+   *
+   * @param {number} num - minimum length
+   */
+  min: function min(num) {
+    return this.password.length >= num;
+  },
+
+  /**
+   * Method to specify a maximum length
+   *
+   * @param {number} num - maximum length
+   */
+  max: function max(num) {
+    return this.password.length <= num;
+  },
+
+  /**
+   * Method to validate the presense of digits
+   */
+  digits: function digits() {
+    return _process.call(this, regex.digits);
+  },
+
+  /**
+   * Method to validate the presense of letters
+   */
+  letters: function letters() {
+    return _process.call(this, regex.letters);
+  },
+
+  /**
+   * Method to validate the presense of uppercase letters
+   */
+  uppercase: function uppercase() {
+    return _process.call(this, regex.uppercase);
+  },
+
+  /**
+   * Method to validate the presense of lowercase letters
+   */
+  lowercase: function lowercase() {
+    return _process.call(this, regex.lowercase);
+  },
+
+  /**
+   * Method to validate the presense of symbols
+   */
+  symbols: function symbols() {
+    return _process.call(this, regex.symbols);
+  },
+
+  /**
+   * Method to validate the presense of space
+   */
+  spaces: function spaces() {
+    return _process.call(this, regex.spaces);
+  },
+
+  /**
+   * Method to provide pre-defined values for password
+   *
+   * @param {array} list - list of values allowed
+   */
+  oneOf: function oneOf(list) {
+    return list.indexOf(this.password) >= 0 === this.positive;
+  }
+};
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 (function ($) {
@@ -169,7 +664,7 @@ __webpack_require__(4);
 })($);
 
 /***/ }),
-/* 4 */
+/* 8 */
 /***/ (function(module, exports) {
 
 
@@ -349,76 +844,16 @@ __webpack_require__(4);
 })(jQuery, swal, toastAlert);
 
 /***/ }),
-/* 5 */
+/* 9 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 6 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports) {
-
-/*!
-* Clamp.js 0.5.1
-*
-* Copyright 2011-2013, Joseph Schmitt http://joe.sh
-* Released under the WTFPL license
-* http://sam.zoy.org/wtfpl/
-*/
-(function () {
-  window.$clamp = function (c, d) {
-    function s(a, b) {
-      n.getComputedStyle || (n.getComputedStyle = function (a, b) {
-        this.el = a;this.getPropertyValue = function (b) {
-          var c = /(\-([a-z]){1})/g;"float" == b && (b = "styleFloat");c.test(b) && (b = b.replace(c, function (a, b, c) {
-            return c.toUpperCase();
-          }));return a.currentStyle && a.currentStyle[b] ? a.currentStyle[b] : null;
-        };return this;
-      });return n.getComputedStyle(a, null).getPropertyValue(b);
-    }function t(a) {
-      a = a || c.clientHeight;var b = u(c);return Math.max(Math.floor(a / b), 0);
-    }function x(a) {
-      return u(c) * a;
-    }function u(a) {
-      var b = s(a, "line-height");"normal" == b && (b = 1.2 * parseInt(s(a, "font-size")));return parseInt(b);
-    }function l(a) {
-      if (a.lastChild.children && 0 < a.lastChild.children.length) return l(Array.prototype.slice.call(a.children).pop());if (a.lastChild && a.lastChild.nodeValue && "" != a.lastChild.nodeValue && a.lastChild.nodeValue != b.truncationChar) return a.lastChild;a.lastChild.parentNode.removeChild(a.lastChild);return l(c);
-    }function p(a, d) {
-      if (d) {
-        var e = a.nodeValue.replace(b.truncationChar, "");f || (h = 0 < k.length ? k.shift() : "", f = e.split(h));1 < f.length ? (q = f.pop(), r(a, f.join(h))) : f = null;m && (a.nodeValue = a.nodeValue.replace(b.truncationChar, ""), c.innerHTML = a.nodeValue + " " + m.innerHTML + b.truncationChar);if (f) {
-          if (c.clientHeight <= d) if (0 <= k.length && "" != h) r(a, f.join(h) + h + q), f = null;else return c.innerHTML;
-        } else "" == h && (r(a, ""), a = l(c), k = b.splitOnChars.slice(0), h = k[0], q = f = null);if (b.animate) setTimeout(function () {
-          p(a, d);
-        }, !0 === b.animate ? 10 : b.animate);else return p(a, d);
-      }
-    }function r(a, c) {
-      a.nodeValue = c + b.truncationChar;
-    }d = d || {};
-    var n = window,
-        b = { clamp: d.clamp || 2, useNativeClamp: "undefined" != typeof d.useNativeClamp ? d.useNativeClamp : !0, splitOnChars: d.splitOnChars || [".", "-", "\u2013", "\u2014", " "], animate: d.animate || !1, truncationChar: d.truncationChar || "\u2026", truncationHTML: d.truncationHTML },
-        e = c.style,
-        y = c.innerHTML,
-        z = "undefined" != typeof c.style.webkitLineClamp,
-        g = b.clamp,
-        v = g.indexOf && (-1 < g.indexOf("px") || -1 < g.indexOf("em")),
-        m;b.truncationHTML && (m = document.createElement("span"), m.innerHTML = b.truncationHTML);var k = b.splitOnChars.slice(0),
-        h = k[0],
-        f,
-        q;"auto" == g ? g = t() : v && (g = t(parseInt(g)));var w;z && b.useNativeClamp ? (e.overflow = "hidden", e.textOverflow = "ellipsis", e.webkitBoxOrient = "vertical", e.display = "-webkit-box", e.webkitLineClamp = g, v && (e.height = b.clamp + "px")) : (e = x(g), e <= c.clientHeight && (w = p(l(c), e)));return { original: y, clamped: w };
-  };
-})();
 
 /***/ })
 /******/ ]);
