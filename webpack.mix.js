@@ -19,6 +19,7 @@ mix.scripts([
     .scripts([
         './node_modules/selectric/src/jquery.selectric.js',
         './node_modules/sweetalert2/dist/sweetalert2.all.min.js',
+        './node_modules/clipboard/dist/clipboard.min.js',
     ], 'public/js/libs.js')
     // .copy('./resources/assets/libs/fontawesome/webfonts', 'public/webfonts')
     .js('resources/assets/js/bootstrap-theme-et/app.js', 'public/js/bootstrap-theme-et.js')

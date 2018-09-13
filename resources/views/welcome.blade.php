@@ -257,6 +257,41 @@
                         ]
                     ]
                 ])
+                @include("forms._textareaAvatar", [
+                    "name"=>"text",
+                    "value"=>"",
+                    "label"=>"Text Aria:",
+                    "placeholder"=>"Input Text",
+                    "attributes"=>[
+                        "rows"=>3
+                    ],
+                    "avatar"=>"/img/tiger.jpg",
+                    "userName"=>"Константин Константинович",
+                    "userSubtext"=>"sdfsdfkug1i23v6r32df",
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
+                ])
+                @include("forms._textarea", [
+                    "name"=>"text",
+                    "value"=>"",
+                    "label"=>"Text Aria:",
+                    "placeholder"=>"Input Text",
+                    "attributes"=>[
+                        "rows"=>3
+                    ],
+                    "validator"=>[
+                        "min"=>[
+                            "value"=>6,
+                            "text"=>"min 6 symbols",
+                            "show"=>true
+                        ]
+                    ]
+                ])
                 @include("forms._input", [
                     "type"=>"text",
                     "name"=>"address",

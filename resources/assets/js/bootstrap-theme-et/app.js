@@ -34,3 +34,4 @@ require('./_navbar');
 
 //Modules
 require('./modules/account-select/account-select');
+require('./modules/selectorWord/selectorWord');

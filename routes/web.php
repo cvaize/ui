@@ -29,3 +29,15 @@ Route::get('4_templates', function () {
 Route::get('5_wallet', function () {
     return view('screens.5_wallet');
 });
+Route::get('6_create-your-wallet', function () {
+    return view('screens.6_create-your-wallet');
+});
+Route::get('7_restore-account', function () {
+    return view('screens.7_restore-account');
+});
+Route::get('8_confirm-backup', function () {
+    return view('screens.8_confirm-backup');
+});
+Route::get('7_2_saving-secret-phrase', function () {
+    return view('screens.7_2_saving-secret-phrase');
+});

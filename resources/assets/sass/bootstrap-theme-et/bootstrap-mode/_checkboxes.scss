@@ -17,7 +17,7 @@ input[type="checkbox"]{
         border-radius: .3rem;
         width: 1.2rem;
         height: 1.2rem;
-        border: 1px solid $color5;
+        border: 1px solid rgba($color5, .45);
         cursor: pointer;
       }
       &:after {

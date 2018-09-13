@@ -88,8 +88,8 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-__webpack_require__(9);
-module.exports = __webpack_require__(10);
+__webpack_require__(10);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
@@ -133,6 +133,7 @@ __webpack_require__(7);
 
 //Modules
 __webpack_require__(8);
+__webpack_require__(9);
 
 /***/ }),
 /* 3 */
@@ -847,10 +848,50 @@ module.exports = {
 /* 9 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+(function ($, ClipboardJS) {
+    $(document).on("click", function (event) {
+
+        var target = $(event.target);
+
+        if (target.is(".js-tag__close")) {
+            event.preventDefault();
+            var tag = target.parents(".js-tag");
+            if (tag && tag.length) {
+                tag.remove();
+            }
+            return;
+        }
+
+        if (target.parents(".js-data-select-copy").length) {
+            if (target.is("[data-select-copy]")) {
+                event.preventDefault();
+                var selectCopy = target.attr("data-select-copy");
+                target.clone().appendTo(selectCopy);
+                console.log(target);
+                return;
+            }
+        }
+    });
+    new ClipboardJS('.js-selectorWord__copy-words', {
+        text: function text(trigger) {
+            var inputs = $(".js-selectorWord").find(".selectorWord__item input");
+            var str = "";
+            inputs.each(function () {
+                str += $(this).val() + " ";
+            });
+            return str;
+        }
+    });
+})($, ClipboardJS);
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

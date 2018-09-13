@@ -1,6 +1,7 @@
 .form-control-label {
   font-size: #{$form-control__label--font-size/$html-font-size-var}rem;
 }
+$content-min-height: 3.57143rem;
 .form-control {
   font-size: #{$form-control--font-size/$html-font-size-var}rem;
   padding: 0 #{$form-control--padding-x/$html-font-size-var}rem;
@@ -25,6 +26,58 @@
   &.is-invalid:focus{
     box-shadow: none;
   }
+  &__avatar{
+    min-height: $content-min-height;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+    flex-grow: 1;
+    cursor: pointer;
+    border: 1px solid $form-control-border-color;
+    border-top: 0;
+    border-bottom-right-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+    transition: all .1s ease;
+    &__wrap-img{
+      position: relative;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-width: 2rem;
+      margin-right: .6rem;
+    }
+    &__img{
+      background: rgba(57, 81, 128, 0.2);
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 50%;
+    }
+    &__wrap-text{
+      width: calc(100% - 3.1rem);
+      padding: .5rem 0;
+    }
+    &__name{
+      line-height: 1.2;
+    }
+    &__subtext{
+      line-height: 1.2;
+      color: $color9;
+      &:empty{
+        margin-top: .2rem;
+        padding-bottom: .8rem;
+        background: rgba(57, 81, 128, 0.2);
+        border-radius: 4rem;
+      }
+    }
+  }
 }
 .input-group-text.is-invalid{
   border-color: $form-feedback-invalid-color;
@@ -39,7 +92,11 @@
     font-weight: $input-group__input-group-text-font-weight;
   }
 }
-
+textarea.form-control{
+  padding-top: #{$form-control--padding-x/$html-font-size-var}rem;
+  padding-bottom: #{$form-control--padding-x/$html-font-size-var}rem;
+  height: auto;
+}
 
 
 .form-group--outline{
@@ -108,6 +165,24 @@
     }
     .input-group-prepend .input-group-text{
       border-color: $form-feedback-invalid-color;
+    }
+
+  }
+  &--textareaAvatar{
+    .form-control{
+      background: $white;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &.is-invalid{
+      .form-control__avatar{
+        border-color: $form-feedback-invalid-color;
+      }
+    }
+    &.active{
+      .form-control__avatar{
+        border-color: $input-focus-border-color;
+      }
     }
   }
 }
