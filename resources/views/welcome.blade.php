@@ -5,6 +5,38 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-lg-12">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <div class="d-none1 ">
+                            <?php
+
+                                $accountSelectPopupDeleteAccount = [
+                                    "imageUrl"=>"/img/bootstrap-theme-et/warning.svg",
+                                    "title"=>"Delete account",
+                                    "customClass"=>"account-select-popup-delete",
+                                    "confirmButtonClass"=>"btn btn-primary w-100 btn-lg ml-3",
+                                    "cancelButtonClass"=>"btn btn-secondary btn-secondary--gray w-100 btn-lg mr-3",
+                                    "buttonsStyling"=>false,
+                                    "padding"=>"2.5rem",
+                                    "showCancelButton"=>true,
+                                    "confirmButtonText"=>"DELETE",
+                                    "cancelButtonText"=>"CANCEL",
+                                    "reverseButtons"=>true,
+                                ];
+
+                            ?>
+                            <div class="js-account-select-popup-delete" data-setup-popup="{{json_encode($accountSelectPopupDeleteAccount)}}">
+                                <div class="font-weight-light my-4">
+                                    <p class="text-center mb-3 account-select-popup-delete__text">
+                                        <i class="fas fa-info-circle mr-2" style="color: #B9CAEC;"></i>You did not save your LED
+                                    </p>
+                                    <p class="text-left account-select-popup-delete__text">Deleting an account will result in its loss if you did not save the secret phrase (SEED).
+                                        Click the DELETE button to delete the account, or CANCEL to return to the previous screen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h1>Header 1</h1>
                 <h2>Header 2</h2>
                 <h3>Header 3</h3>

@@ -3,7 +3,7 @@
 
         <div class="navbar__content-wrapper">
             <a class="navbar-brand pb-2" href="#">
-                <img class="d-none d-xl-inline" src="/img/logo.jpg" alt="logo">
+                <img class="d-none d-xl-inline" src="/img/et-black.png" alt="logo">
                 <img class="d-inline d-xl-none" src="/img/logotype-white.png" alt="logo">
             </a>
 

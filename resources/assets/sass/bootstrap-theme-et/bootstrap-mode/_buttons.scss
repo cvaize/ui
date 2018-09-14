@@ -47,6 +47,16 @@
     @include gradient-bg($white);
     border-color: $primary;
   }
+  &--gray{
+    color: $gray-500;
+    @include gradient-bg(rgba($gray-500, .15));
+    border-color: transparent;
+    @include hover {
+      color: $gray-500;
+      @include gradient-bg(rgba($gray-500, .20));
+      border-color: rgba($gray-500, .20);
+    }
+  }
 }
 .btn-social {
   color: $gray-500;

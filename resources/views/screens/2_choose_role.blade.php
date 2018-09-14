@@ -9,7 +9,7 @@
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <div class="my-5">
                         <a href="#">
-                            <img height="100" src="/img/logo.jpg" alt="">
+                            <img height="100" src="/img/et-black.png" alt="">
                         </a>
                     </div>
                     <div class="my-3 text-center">

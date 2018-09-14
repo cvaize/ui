@@ -1,3 +1,14 @@
 @import 'mixins';
 $prefix: "module__";
 @include account-select($prefix);
+.account-select-popup-delete{
+  .swal2-title{
+    font-weight: 300;
+    color: #395180;
+    font-size: 42px;
+    line-height: 1.2;
+  }
+  &__text{
+    color: #395180;
+  }
+}

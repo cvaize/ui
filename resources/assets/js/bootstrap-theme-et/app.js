@@ -21,13 +21,8 @@ $(function () {//https://atomiks.github.io/tippyjs/
     });
 });
 
-window.toastAlert = swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-});
 
+require('./_messageHandler');
 require('./_form-controls');
 
 require('./_navbar');

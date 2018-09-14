@@ -120,13 +120,7 @@ $(function () {
     });
 });
 
-window.toastAlert = swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-});
-
+__webpack_require__(18);
 __webpack_require__(4);
 
 __webpack_require__(7);
@@ -669,21 +663,39 @@ module.exports = {
 /***/ (function(module, exports) {
 
 
-(function ($, swal, toastAlert) {
+(function ($, swal) {
     var prefixClass = "module__";
     var jsPrefix = ".js-";
     var debug = true;
     if (debug && !swal) {
         console.log("Подключите SweetAlert2");
     }
-    if (debug && !toastAlert) {
-        console.log("Подключите SweetAlert2 ToastAlert");
+
+    var setupPopupElement = $(".js-account-select-popup-delete");
+    var setupPopup = setupPopupElement.attr("data-setup-popup");
+    if (setupPopup.length > 4) {
+        setupPopup = JSON.parse(setupPopup);
+        setupPopup.html = setupPopupElement.html();
+    } else {
+        setupPopup = {
+            confirmButtonClass: 'btn btn-success w-100 btn-lg ml-3',
+            cancelButtonClass: 'btn btn-danger w-100 btn-lg mr-3',
+            buttonsStyling: false,
+            title: 'Are you sure?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true,
+            width: "35rem",
+            padding: "3rem"
+        };
     }
-    var swalWithBootstrapButtons = swal.mixin({
-        confirmButtonClass: 'btn btn-success w-100 btn-lg ml-3',
-        cancelButtonClass: 'btn btn-danger w-100 btn-lg mr-3',
-        buttonsStyling: false
-    });
+
+    if (setupPopup.imageUrl) {
+        $.ajax(setupPopup.imageUrl, { cache: true });
+    }
+
     //Скрить - Покзать список
     var showHide = function showHide(command) {
         var list = $(jsPrefix + prefixClass + "account-select__wrap-list");
@@ -741,7 +753,7 @@ module.exports = {
             select.val(value).change();
         }
     };
-
+    var popupShow = false; // Сделано чтобы не скрывать список при работе с окнами
     $(document).on("click", function (event) {
 
         var target = $(event.target);
@@ -762,27 +774,29 @@ module.exports = {
             return;
         }
 
-        //Скрить - Покзать список
-        if (target.is(jsPrefix + prefixClass + "account-select") || target.parents(jsPrefix + prefixClass + "account-select").length > 0) {
-            event.preventDefault();
-            showHide();
+        if (!popupShow) {
+            //Скрить - Покзать список
+            if (target.is(jsPrefix + prefixClass + "account-select") || target.parents(jsPrefix + prefixClass + "account-select").length > 0) {
+                event.preventDefault();
+                showHide();
 
-            if (debug) {
-                console.log("Скрить - Покзать список");
+                if (debug) {
+                    console.log("Скрить - Покзать список");
+                }
+                return;
             }
-            return;
-        }
 
-        //Cкрывать список если он не скрыт при клике
-        if (!target.is(jsPrefix + prefixClass + "account-select__wrapper") && target.parents(jsPrefix + prefixClass + "account-select__wrapper").length === 0 && isShow()) {
-            event.preventDefault();
-            showHide("hide");
+            //Cкрывать список если он не скрыт при клике
+            if (!target.is(jsPrefix + prefixClass + "account-select__wrapper") && target.parents(jsPrefix + prefixClass + "account-select__wrapper").length === 0 && isShow()) {
+                event.preventDefault();
+                showHide("hide");
 
-            if (debug) {
-                console.log(target.parents(jsPrefix + prefixClass + "account-select__wrapper"));
-                console.log(target, "Cкрывать список если он не скрыт при клике");
+                if (debug) {
+                    console.log(target.parents(jsPrefix + prefixClass + "account-select__wrapper"));
+                    console.log(target, "Cкрывать список если он не скрыт при клике");
+                }
+                return;
             }
-            return;
         }
 
         // Нажатие на кнопку удалить
@@ -792,6 +806,7 @@ module.exports = {
             if (debug) {
                 console.log("Нажатие на кнопку удалить");
             }
+            popupShow = true;
             event.preventDefault();
             var element = target;
             if (!target.is(jsPrefix + prefixClass + "account-select__delete")) {
@@ -809,40 +824,45 @@ module.exports = {
             if (popup && popup.length > 0) {
                 popup = JSON.parse(popup);
             } else {
-                popup = {
-                    title: 'Are you sure?',
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'No, cancel!',
-                    reverseButtons: true
-                };
+                popup = setupPopup;
             }
-            popup["width"] = "35rem";
-            popup["padding"] = "3rem";
-            swalWithBootstrapButtons(popup).then(function (result) {
+            swal(popup).then(function (result) {
                 if (result.value) {
                     $.ajax(url, {
                         method: method,
                         data: data
                     }).then(function (data) {
-                        if (data && data.success && data.success.length > 1 && data.title && data.title.length > 1) {
-                            toastAlert(data);
-                        } else {
-                            if (debug) {
-                                toastAlert({
-                                    type: 'success',
-                                    title: 'Debug message'
-                                });
+                        if (data && data.type && data.type === 'success') {
+                            if (data.redirect) {
+                                var href = "/";
+                                if (data.redirect.length) {
+                                    href = data.redirect;
+                                }
+                                document.location.href = href;
+                            } else {
+                                var elementDelete = element.parents(jsPrefix + prefixClass + "account-select__item");
+                                var index = elementDelete.find(jsPrefix + prefixClass + "account-select__content").attr("data-index");
+                                if (index) {
+                                    $(jsPrefix + prefixClass + "account-select__content[data-index='" + index + "']").remove();
+                                }
+                                elementDelete.remove();
+                                var _content = $(jsPrefix + prefixClass + "account-select__content").get(0);
+                                if (_content) {
+                                    selectOption($(_content));
+                                }
                             }
                         }
+                        messageHandler(data);
                     });
                 }
+                setTimeout(function () {
+                    popupShow = false;
+                }, 300);
             });
             return;
         }
     });
-})(jQuery, swal, toastAlert);
+})(jQuery, swal, messageHandler);
 
 /***/ }),
 /* 9 */
@@ -895,6 +915,30 @@ module.exports = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ (function(module, exports) {
+
+window.messageHandler = function (data) {
+    var toastAlert = swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+
+    // toastAlert({
+    //     type: 'success',
+    //     title: 'Debug message'
+    // });
+};
 
 /***/ })
 /******/ ]);

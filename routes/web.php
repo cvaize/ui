@@ -41,3 +41,8 @@ Route::get('8_confirm-backup', function () {
 Route::get('7_2_saving-secret-phrase', function () {
     return view('screens.7_2_saving-secret-phrase');
 });
+Route::get('9_no-backup-no-money', function () {
+    return view('screens.9_no-backup-no-money');
+});
+Route::post('api', "Api@index")->name("api");
+Route::post('api2', "Api@index2")->name("api2");
